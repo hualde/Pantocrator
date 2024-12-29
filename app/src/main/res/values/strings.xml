@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Pantocrator</string>
+    <string name="confession">Confesión</string>
+    <string name="settings">Ajustes</string>
+    <string name="dark_theme">Tema Oscuro</string>
+    <string name="language">Idioma</string>
+</resources>
