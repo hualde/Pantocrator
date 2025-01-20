@@ -5,4 +5,7 @@
     <string name="settings">Settings</string>
     <string name="dark_theme">Dark Theme</string>
     <string name="language">Language</string>
+    <string name="back">Back</string>
+    <string name="confession_button">Start Confession</string>
+    <string name="settings_button">Settings</string>
 </resources> 

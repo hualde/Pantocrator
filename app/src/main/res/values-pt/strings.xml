@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pantocrator</string>
+    <string name="confession">Confissão</string>
+    <string name="settings">Configurações</string>
+    <string name="dark_theme">Tema Escuro</string>
+    <string name="language">Idioma</string>
+    <string name="back">Voltar</string>
+    <string name="confession_button">Iniciar Confissão</string>
+    <string name="settings_button">Configurações</string>
+</resources> 

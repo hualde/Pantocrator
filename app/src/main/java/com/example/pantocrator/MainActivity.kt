@@ -1,5 +1,6 @@
 package com.example.pantocrator
 
+import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -15,16 +16,36 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.example.pantocrator.language.LocaleHelper
 import com.example.pantocrator.ui.theme.PantocratorTheme
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.first
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.runBlocking
+import androidx.compose.runtime.collectAsState
+import com.example.pantocrator.data.SettingsDataStore
 
 @OptIn(ExperimentalMaterial3Api::class)
 class MainActivity : ComponentActivity() {
+    private lateinit var settingsDataStore: SettingsDataStore
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        settingsDataStore = SettingsDataStore(this)
+        
         enableEdgeToEdge()
         setContent {
-            var isDarkTheme by remember { mutableStateOf(false) }
+            // Observar el tema actual
+            val isDarkTheme by settingsDataStore.isDarkTheme.collectAsState(initial = false)
             var currentScreen by remember { mutableStateOf(Screen.Home) }
+            
+            // Observar el idioma actual
+            val currentLanguage by settingsDataStore.language.collectAsState(initial = "Español")
+            
+            // Aplicar el idioma actual
+            LaunchedEffect(currentLanguage) {
+                LocaleHelper.setLocale(this@MainActivity, currentLanguage)
+            }
             
             PantocratorTheme(darkTheme = isDarkTheme) {
                 Scaffold(
@@ -44,7 +65,7 @@ class MainActivity : ComponentActivity() {
                                     IconButton(onClick = { currentScreen = Screen.Home }) {
                                         Icon(
                                             Icons.Default.ArrowBack,
-                                            contentDescription = "Volver"
+                                            contentDescription = stringResource(id = R.string.back)
                                         )
                                     }
                                 }
@@ -73,13 +94,32 @@ class MainActivity : ComponentActivity() {
                         )
                         Screen.Settings -> SettingsScreen(
                             isDarkTheme = isDarkTheme,
-                            onThemeChanged = { isDarkTheme = it },
+                            onThemeChanged = { newTheme ->
+                                lifecycleScope.launch {
+                                    settingsDataStore.saveDarkTheme(newTheme)
+                                }
+                            },
+                            currentLanguage = currentLanguage,
+                            onLanguageChanged = { language ->
+                                lifecycleScope.launch {
+                                    settingsDataStore.saveLanguage(language)
+                                    recreate()
+                                }
+                            },
                             modifier = Modifier.padding(padding)
                         )
                     }
                 }
             }
         }
+    }
+
+    override fun attachBaseContext(newBase: Context) {
+        // Usar runBlocking para obtener el idioma guardado de forma síncrona
+        val language = runBlocking {
+            SettingsDataStore(newBase).language.first()
+        }
+        super.attachBaseContext(LocaleHelper.setLocale(newBase, language))
     }
 }
 
@@ -113,7 +153,7 @@ fun HomeScreen(
                 contentDescription = null,
                 modifier = Modifier.padding(end = 8.dp)
             )
-            Text("Confesión")
+            Text(stringResource(id = R.string.confession_button))
         }
         
         OutlinedButton(
@@ -127,7 +167,7 @@ fun HomeScreen(
                 contentDescription = null,
                 modifier = Modifier.padding(end = 8.dp)
             )
-            Text("Ajustes")
+            Text(stringResource(id = R.string.settings_button))
         }
     }
 }
@@ -136,6 +176,8 @@ fun HomeScreen(
 fun SettingsScreen(
     isDarkTheme: Boolean,
     onThemeChanged: (Boolean) -> Unit,
+    currentLanguage: String,
+    onLanguageChanged: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -184,9 +226,12 @@ fun SettingsScreen(
 
             items(languages) { (language, flag) ->
                 Surface(
-                    onClick = { /* Implementar cambio de idioma */ },
+                    onClick = { onLanguageChanged(language) },
                     shape = MaterialTheme.shapes.medium,
-                    color = MaterialTheme.colorScheme.surfaceVariant,
+                    color = if (language == currentLanguage) 
+                        MaterialTheme.colorScheme.primaryContainer 
+                    else 
+                        MaterialTheme.colorScheme.surfaceVariant,
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Row(
@@ -200,10 +245,23 @@ fun SettingsScreen(
                             text = flag,
                             style = MaterialTheme.typography.titleLarge
                         )
-                        Text(
-                            text = language,
-                            style = MaterialTheme.typography.titleMedium
-                        )
+                        Row(
+                            modifier = Modifier.weight(1f),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Text(
+                                text = language,
+                                style = MaterialTheme.typography.titleMedium
+                            )
+                            if (language == currentLanguage) {
+                                Icon(
+                                    Icons.Default.Check,
+                                    contentDescription = "Seleccionado",
+                                    tint = MaterialTheme.colorScheme.primary
+                                )
+                            }
+                        }
                     }
                 }
             }

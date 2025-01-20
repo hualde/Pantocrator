@@ -4,4 +4,7 @@
     <string name="settings">Ajustes</string>
     <string name="dark_theme">Tema Oscuro</string>
     <string name="language">Idioma</string>
+    <string name="back">Volver</string>
+    <string name="confession_button">Comenzar Confesión</string>
+    <string name="settings_button">Configuración</string>
 </resources>
