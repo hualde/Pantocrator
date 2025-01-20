@@ -8,4 +8,7 @@
     <string name="back">Indietro</string>
     <string name="confession_button">Inizia Confessione</string>
     <string name="settings_button">Impostazioni</string>
+    <string name="initial_confession_message">Ave Maria Purissima. Benvenuto figlio/a, sei in uno spazio sicuro per confessare i tuoi peccati. Cosa ti porta qui?</string>
+    <string name="type_message">Scrivi il tuo messaggio...</string>
+    <string name="send_message">Invia messaggio</string>
 </resources> 

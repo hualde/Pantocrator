@@ -8,4 +8,7 @@
     <string name="back">Retour</string>
     <string name="confession_button">Commencer la Confession</string>
     <string name="settings_button">Paramètres</string>
+    <string name="initial_confession_message">Je vous salue Marie très pure. Bienvenue mon enfant, vous êtes dans un espace sûr pour confesser vos péchés. Qu\'est-ce qui vous amène ici ?</string>
+    <string name="type_message">Écrivez votre message...</string>
+    <string name="send_message">Envoyer le message</string>
 </resources> 

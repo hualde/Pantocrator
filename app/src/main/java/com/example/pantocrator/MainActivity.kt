@@ -273,10 +273,132 @@ fun SettingsScreen(
 fun ConfesionScreen(
     modifier: Modifier = Modifier
 ) {
-    Column(
-        modifier = modifier
-            .fillMaxSize()
-    ) {
-        // Aquí va el contenido del chat
+    var userInput by remember { mutableStateOf("") }
+    var messages by remember { mutableStateOf(listOf<Message>()) }
+
+    // Obtener el mensaje inicial fuera del LaunchedEffect
+    val initialMessage = stringResource(id = R.string.initial_confession_message)
+
+    // Mensaje inicial del sacerdote
+    LaunchedEffect(initialMessage) {
+        if (messages.isEmpty()) {
+            messages = listOf(
+                Message(
+                    text = initialMessage,
+                    type = MessageType.PRIEST
+                )
+            )
+        }
     }
+
+    Column(
+        modifier = modifier.fillMaxSize()
+    ) {
+        // Area de mensajes
+        LazyColumn(
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp),
+            reverseLayout = true
+        ) {
+            items(messages.asReversed()) { message ->
+                ChatMessage(
+                    message = message,
+                    modifier = Modifier.padding(vertical = 4.dp)
+                )
+            }
+        }
+
+        // Area de entrada de texto
+        Surface(
+            modifier = Modifier.fillMaxWidth(),
+            shadowElevation = 8.dp
+        ) {
+            Row(
+                modifier = Modifier
+                    .padding(16.dp)
+                    .fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                TextField(
+                    value = userInput,
+                    onValueChange = { userInput = it },
+                    modifier = Modifier
+                        .weight(1f)
+                        .padding(end = 8.dp),
+                    placeholder = { Text(stringResource(id = R.string.type_message)) },
+                    colors = TextFieldDefaults.colors(
+                        unfocusedContainerColor = MaterialTheme.colorScheme.surface,
+                        focusedContainerColor = MaterialTheme.colorScheme.surface
+                    )
+                )
+
+                FilledIconButton(
+                    onClick = {
+                        if (userInput.isNotBlank()) {
+                            messages = messages + Message(userInput, MessageType.USER)
+                            userInput = ""
+                            // Aquí después implementaremos la llamada a la API
+                        }
+                    },
+                    enabled = userInput.isNotBlank()
+                ) {
+                    Icon(
+                        Icons.Default.Send,
+                        contentDescription = stringResource(id = R.string.send_message)
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun ChatMessage(
+    message: Message,
+    modifier: Modifier = Modifier
+) {
+    Row(
+        modifier = modifier.fillMaxWidth(),
+        horizontalArrangement = if (message.type == MessageType.USER) 
+            Arrangement.End else Arrangement.Start
+    ) {
+        Surface(
+            shape = MaterialTheme.shapes.medium,
+            color = if (message.type == MessageType.USER)
+                MaterialTheme.colorScheme.primaryContainer
+            else
+                MaterialTheme.colorScheme.secondaryContainer,
+            modifier = Modifier.widthIn(max = 340.dp)
+        ) {
+            Row(
+                modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                if (message.type == MessageType.PRIEST) {
+                    Icon(
+                        Icons.Default.Church,
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(24.dp)
+                            .padding(end = 8.dp)
+                    )
+                }
+                Text(
+                    text = message.text,
+                    style = MaterialTheme.typography.bodyLarge
+                )
+            }
+        }
+    }
+}
+
+data class Message(
+    val text: String,
+    val type: MessageType
+)
+
+enum class MessageType {
+    USER, PRIEST
 }
