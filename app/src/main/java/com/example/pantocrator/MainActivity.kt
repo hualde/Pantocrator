@@ -24,6 +24,7 @@ import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.runBlocking
 import androidx.compose.runtime.collectAsState
 import com.example.pantocrator.data.SettingsDataStore
+import com.example.pantocrator.api.DeepSeekApi
 
 @OptIn(ExperimentalMaterial3Api::class)
 class MainActivity : ComponentActivity() {
@@ -90,7 +91,8 @@ class MainActivity : ComponentActivity() {
                             modifier = Modifier.padding(padding)
                         )
                         Screen.Confesion -> ConfesionScreen(
-                            modifier = Modifier.padding(padding)
+                            modifier = Modifier.padding(padding),
+                            currentLanguage = currentLanguage
                         )
                         Screen.Settings -> SettingsScreen(
                             isDarkTheme = isDarkTheme,
@@ -271,12 +273,17 @@ fun SettingsScreen(
 
 @Composable
 fun ConfesionScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    currentLanguage: String
 ) {
     var userInput by remember { mutableStateOf("") }
     var messages by remember { mutableStateOf(listOf<Message>()) }
-
-    // Obtener el mensaje inicial fuera del LaunchedEffect
+    var isLoading by remember { mutableStateOf(false) }
+    val deepSeekApi = remember { DeepSeekApi() }
+    val scope = rememberCoroutineScope()
+    
+    // Obtener los strings fuera de la corrutina
+    val errorMessage = stringResource(id = R.string.api_error)
     val initialMessage = stringResource(id = R.string.initial_confession_message)
 
     // Mensaje inicial del sacerdote
@@ -324,6 +331,7 @@ fun ConfesionScreen(
                 TextField(
                     value = userInput,
                     onValueChange = { userInput = it },
+                    enabled = !isLoading,
                     modifier = Modifier
                         .weight(1f)
                         .padding(end = 8.dp),
@@ -337,17 +345,36 @@ fun ConfesionScreen(
                 FilledIconButton(
                     onClick = {
                         if (userInput.isNotBlank()) {
-                            messages = messages + Message(userInput, MessageType.USER)
+                            val userMessage = userInput
                             userInput = ""
-                            // Aquí después implementaremos la llamada a la API
+                            isLoading = true
+                            messages = messages + Message(userMessage, MessageType.USER)
+                            
+                            scope.launch {
+                                try {
+                                    val response = deepSeekApi.getChatResponse(userMessage, currentLanguage)
+                                    messages = messages + Message(response, MessageType.PRIEST)
+                                } catch (e: Exception) {
+                                    messages = messages + Message(errorMessage, MessageType.PRIEST)
+                                } finally {
+                                    isLoading = false
+                                }
+                            }
                         }
                     },
-                    enabled = userInput.isNotBlank()
+                    enabled = userInput.isNotBlank() && !isLoading
                 ) {
-                    Icon(
-                        Icons.Default.Send,
-                        contentDescription = stringResource(id = R.string.send_message)
-                    )
+                    if (isLoading) {
+                        CircularProgressIndicator(
+                            modifier = Modifier.size(24.dp),
+                            color = MaterialTheme.colorScheme.onPrimary
+                        )
+                    } else {
+                        Icon(
+                            Icons.Default.Send,
+                            contentDescription = stringResource(id = R.string.send_message)
+                        )
+                    }
                 }
             }
         }
