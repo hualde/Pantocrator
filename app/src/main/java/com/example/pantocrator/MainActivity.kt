@@ -25,14 +25,17 @@ import kotlinx.coroutines.runBlocking
 import androidx.compose.runtime.collectAsState
 import com.example.pantocrator.data.SettingsDataStore
 import com.example.pantocrator.api.DeepSeekApi
+import com.example.pantocrator.audio.MusicPlayer
 
 @OptIn(ExperimentalMaterial3Api::class)
 class MainActivity : ComponentActivity() {
     private lateinit var settingsDataStore: SettingsDataStore
+    private lateinit var musicPlayer: MusicPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         settingsDataStore = SettingsDataStore(this)
+        musicPlayer = MusicPlayer(this)
         
         enableEdgeToEdge()
         setContent {
@@ -43,9 +46,21 @@ class MainActivity : ComponentActivity() {
             // Observar el idioma actual
             val currentLanguage by settingsDataStore.language.collectAsState(initial = "Español")
             
+            // Observar el estado de la música
+            val isMusicEnabled by settingsDataStore.isMusicEnabled.collectAsState(initial = true)
+            
             // Aplicar el idioma actual
             LaunchedEffect(currentLanguage) {
                 LocaleHelper.setLocale(this@MainActivity, currentLanguage)
+            }
+            
+            // Controlar la música basado en la preferencia
+            LaunchedEffect(isMusicEnabled) {
+                if (isMusicEnabled) {
+                    musicPlayer.startMusic()
+                } else {
+                    musicPlayer.stopMusic()
+                }
             }
             
             PantocratorTheme(darkTheme = isDarkTheme) {
@@ -108,12 +123,23 @@ class MainActivity : ComponentActivity() {
                                     recreate()
                                 }
                             },
+                            isMusicEnabled = isMusicEnabled,
+                            onMusicEnabledChanged = { enabled ->
+                                lifecycleScope.launch {
+                                    settingsDataStore.saveMusicEnabled(enabled)
+                                }
+                            },
                             modifier = Modifier.padding(padding)
                         )
                     }
                 }
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        musicPlayer.stopMusic()
     }
 
     override fun attachBaseContext(newBase: Context) {
@@ -180,6 +206,8 @@ fun SettingsScreen(
     onThemeChanged: (Boolean) -> Unit,
     currentLanguage: String,
     onLanguageChanged: (String) -> Unit,
+    isMusicEnabled: Boolean,
+    onMusicEnabledChanged: (Boolean) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -188,7 +216,7 @@ fun SettingsScreen(
             .padding(horizontal = 16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        // Tema oscuro
+        // Control de tema oscuro
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -203,6 +231,24 @@ fun SettingsScreen(
             Switch(
                 checked = isDarkTheme,
                 onCheckedChange = onThemeChanged
+            )
+        }
+
+        // Control de música
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 8.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = stringResource(id = R.string.background_music),
+                style = MaterialTheme.typography.titleMedium
+            )
+            Switch(
+                checked = isMusicEnabled,
+                onCheckedChange = onMusicEnabledChanged
             )
         }
 

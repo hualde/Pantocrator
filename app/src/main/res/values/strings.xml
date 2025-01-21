@@ -11,4 +11,5 @@
     <string name="type_message">Escribe tu mensaje...</string>
     <string name="send_message">Enviar mensaje</string>
     <string name="api_error">Lo siento, ha ocurrido un error al procesar tu mensaje. Por favor, inténtalo de nuevo.</string>
+    <string name="background_music">Música de fondo</string>
 </resources>

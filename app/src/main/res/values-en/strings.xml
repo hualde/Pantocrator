@@ -11,4 +11,5 @@
     <string name="initial_confession_message">Hail Mary Most Pure. Welcome child, you are in a safe space to confess your sins. What brings you here?</string>
     <string name="type_message">Type your message...</string>
     <string name="send_message">Send message</string>
+    <string name="background_music">Background music</string>
 </resources> 

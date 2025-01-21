@@ -15,6 +15,7 @@ val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "se
 class SettingsDataStore(private val context: Context) {
     private val LANGUAGE_KEY = stringPreferencesKey("language")
     private val DARK_THEME_KEY = booleanPreferencesKey("dark_theme")
+    private val MUSIC_ENABLED_KEY = booleanPreferencesKey("music_enabled")
 
     val language: Flow<String> = context.dataStore.data
         .map { preferences ->
@@ -26,6 +27,11 @@ class SettingsDataStore(private val context: Context) {
             preferences[DARK_THEME_KEY] ?: false
         }
 
+    val isMusicEnabled: Flow<Boolean> = context.dataStore.data
+        .map { preferences ->
+            preferences[MUSIC_ENABLED_KEY] ?: true
+        }
+
     suspend fun saveLanguage(language: String) {
         context.dataStore.edit { preferences ->
             preferences[LANGUAGE_KEY] = language
@@ -35,6 +41,12 @@ class SettingsDataStore(private val context: Context) {
     suspend fun saveDarkTheme(isDark: Boolean) {
         context.dataStore.edit { preferences ->
             preferences[DARK_THEME_KEY] = isDark
+        }
+    }
+
+    suspend fun saveMusicEnabled(enabled: Boolean) {
+        context.dataStore.edit { preferences ->
+            preferences[MUSIC_ENABLED_KEY] = enabled
         }
     }
 } 
