@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -14,7 +16,9 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.example.pantocrator.language.LocaleHelper
 import com.example.pantocrator.ui.theme.PantocratorTheme
@@ -26,6 +30,9 @@ import androidx.compose.runtime.collectAsState
 import com.example.pantocrator.data.SettingsDataStore
 import com.example.pantocrator.api.DeepSeekApi
 import com.example.pantocrator.audio.MusicPlayer
+import androidx.compose.ui.layout.ContentScale
+import kotlinx.coroutines.delay
+import androidx.compose.ui.graphics.Color
 
 @OptIn(ExperimentalMaterial3Api::class)
 class MainActivity : ComponentActivity() {
@@ -39,7 +46,7 @@ class MainActivity : ComponentActivity() {
         
         enableEdgeToEdge()
         setContent {
-            // Observar el tema actual
+            var showSplash by remember { mutableStateOf(true) }
             val isDarkTheme by settingsDataStore.isDarkTheme.collectAsState(initial = false)
             var currentScreen by remember { mutableStateOf(Screen.Home) }
             
@@ -64,73 +71,77 @@ class MainActivity : ComponentActivity() {
             }
             
             PantocratorTheme(darkTheme = isDarkTheme) {
-                Scaffold(
-                    topBar = {
-                        TopAppBar(
-                            title = { 
-                                Text(
-                                    text = when(currentScreen) {
-                                        Screen.Home -> stringResource(id = R.string.app_name)
-                                        Screen.Confesion -> stringResource(id = R.string.confession)
-                                        Screen.Settings -> stringResource(id = R.string.settings)
+                if (showSplash) {
+                    SplashScreen(onSplashFinished = { showSplash = false })
+                } else {
+                    Scaffold(
+                        topBar = {
+                            TopAppBar(
+                                title = { 
+                                    Text(
+                                        text = when(currentScreen) {
+                                            Screen.Home -> stringResource(id = R.string.app_name)
+                                            Screen.Confesion -> stringResource(id = R.string.confession)
+                                            Screen.Settings -> stringResource(id = R.string.settings)
+                                        }
+                                    )
+                                },
+                                navigationIcon = {
+                                    if (currentScreen != Screen.Home) {
+                                        IconButton(onClick = { currentScreen = Screen.Home }) {
+                                            Icon(
+                                                Icons.Default.ArrowBack,
+                                                contentDescription = stringResource(id = R.string.back)
+                                            )
+                                        }
                                     }
-                                )
-                            },
-                            navigationIcon = {
-                                if (currentScreen != Screen.Home) {
-                                    IconButton(onClick = { currentScreen = Screen.Home }) {
-                                        Icon(
-                                            Icons.Default.ArrowBack,
-                                            contentDescription = stringResource(id = R.string.back)
-                                        )
+                                },
+                                actions = {
+                                    if (currentScreen == Screen.Home) {
+                                        IconButton(onClick = { currentScreen = Screen.Settings }) {
+                                            Icon(
+                                                Icons.Default.Settings,
+                                                contentDescription = stringResource(id = R.string.settings)
+                                            )
+                                        }
                                     }
                                 }
-                            },
-                            actions = {
-                                if (currentScreen == Screen.Home) {
-                                    IconButton(onClick = { currentScreen = Screen.Settings }) {
-                                        Icon(
-                                            Icons.Default.Settings,
-                                            contentDescription = stringResource(id = R.string.settings)
-                                        )
+                            )
+                        }
+                    ) { padding ->
+                        when (currentScreen) {
+                            Screen.Home -> HomeScreen(
+                                onConfesionClick = { currentScreen = Screen.Confesion },
+                                onSettingsClick = { currentScreen = Screen.Settings },
+                                modifier = Modifier.padding(padding)
+                            )
+                            Screen.Confesion -> ConfesionScreen(
+                                modifier = Modifier.padding(padding),
+                                currentLanguage = currentLanguage
+                            )
+                            Screen.Settings -> SettingsScreen(
+                                isDarkTheme = isDarkTheme,
+                                onThemeChanged = { newTheme ->
+                                    lifecycleScope.launch {
+                                        settingsDataStore.saveDarkTheme(newTheme)
                                     }
-                                }
-                            }
-                        )
-                    }
-                ) { padding ->
-                    when (currentScreen) {
-                        Screen.Home -> HomeScreen(
-                            onConfesionClick = { currentScreen = Screen.Confesion },
-                            onSettingsClick = { currentScreen = Screen.Settings },
-                            modifier = Modifier.padding(padding)
-                        )
-                        Screen.Confesion -> ConfesionScreen(
-                            modifier = Modifier.padding(padding),
-                            currentLanguage = currentLanguage
-                        )
-                        Screen.Settings -> SettingsScreen(
-                            isDarkTheme = isDarkTheme,
-                            onThemeChanged = { newTheme ->
-                                lifecycleScope.launch {
-                                    settingsDataStore.saveDarkTheme(newTheme)
-                                }
-                            },
-                            currentLanguage = currentLanguage,
-                            onLanguageChanged = { language ->
-                                lifecycleScope.launch {
-                                    settingsDataStore.saveLanguage(language)
-                                    recreate()
-                                }
-                            },
-                            isMusicEnabled = isMusicEnabled,
-                            onMusicEnabledChanged = { enabled ->
-                                lifecycleScope.launch {
-                                    settingsDataStore.saveMusicEnabled(enabled)
-                                }
-                            },
-                            modifier = Modifier.padding(padding)
-                        )
+                                },
+                                currentLanguage = currentLanguage,
+                                onLanguageChanged = { language ->
+                                    lifecycleScope.launch {
+                                        settingsDataStore.saveLanguage(language)
+                                        recreate()
+                                    }
+                                },
+                                isMusicEnabled = isMusicEnabled,
+                                onMusicEnabledChanged = { enabled ->
+                                    lifecycleScope.launch {
+                                        settingsDataStore.saveMusicEnabled(enabled)
+                                    }
+                                },
+                                modifier = Modifier.padding(padding)
+                            )
+                        }
                     }
                 }
             }
@@ -474,4 +485,28 @@ data class Message(
 
 enum class MessageType {
     USER, PRIEST
+}
+
+@Composable
+fun SplashScreen(onSplashFinished: () -> Unit) {
+    LaunchedEffect(Unit) {
+        delay(2000) // Mostrar splash durante 2 segundos
+        onSplashFinished()
+    }
+
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.Black),  // Fondo negro
+        contentAlignment = Alignment.Center
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.inicio_image),
+            contentDescription = null,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(32.dp),
+            contentScale = ContentScale.Fit
+        )
+    }
 }
