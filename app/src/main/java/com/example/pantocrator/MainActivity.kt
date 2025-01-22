@@ -18,6 +18,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.example.pantocrator.language.LocaleHelper
@@ -329,118 +330,37 @@ fun SettingsScreen(
 }
 
 @Composable
-fun ConfesionScreen(
+fun AnimatedText(
+    text: String,
     modifier: Modifier = Modifier,
-    currentLanguage: String
+    style: androidx.compose.ui.text.TextStyle = MaterialTheme.typography.bodyLarge,
+    onAnimationCompleted: () -> Unit = {}
 ) {
-    var userInput by remember { mutableStateOf("") }
-    var messages by remember { mutableStateOf(listOf<Message>()) }
-    var isLoading by remember { mutableStateOf(false) }
-    val deepSeekApi = remember { DeepSeekApi() }
-    val scope = rememberCoroutineScope()
+    var displayedText by remember { mutableStateOf("") }
+    var currentIndex by remember { mutableStateOf(0) }
     
-    // Obtener los strings fuera de la corrutina
-    val errorMessage = stringResource(id = R.string.api_error)
-    val initialMessage = stringResource(id = R.string.initial_confession_message)
-
-    // Mensaje inicial del sacerdote
-    LaunchedEffect(initialMessage) {
-        if (messages.isEmpty()) {
-            messages = listOf(
-                Message(
-                    text = initialMessage,
-                    type = MessageType.PRIEST
-                )
-            )
+    LaunchedEffect(text) {
+        displayedText = ""
+        currentIndex = 0
+        while (currentIndex < text.length) {
+            delay(25) // Velocidad de escritura
+            displayedText = text.substring(0, currentIndex + 1)
+            currentIndex++
         }
+        onAnimationCompleted()
     }
-
-    Column(
-        modifier = modifier.fillMaxSize()
-    ) {
-        // Area de mensajes
-        LazyColumn(
-            modifier = Modifier
-                .weight(1f)
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp),
-            reverseLayout = true
-        ) {
-            items(messages.asReversed()) { message ->
-                ChatMessage(
-                    message = message,
-                    modifier = Modifier.padding(vertical = 4.dp)
-                )
-            }
-        }
-
-        // Area de entrada de texto
-        Surface(
-            modifier = Modifier.fillMaxWidth(),
-            shadowElevation = 8.dp
-        ) {
-            Row(
-                modifier = Modifier
-                    .padding(16.dp)
-                    .fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                TextField(
-                    value = userInput,
-                    onValueChange = { userInput = it },
-                    enabled = !isLoading,
-                    modifier = Modifier
-                        .weight(1f)
-                        .padding(end = 8.dp),
-                    placeholder = { Text(stringResource(id = R.string.type_message)) },
-                    colors = TextFieldDefaults.colors(
-                        unfocusedContainerColor = MaterialTheme.colorScheme.surface,
-                        focusedContainerColor = MaterialTheme.colorScheme.surface
-                    )
-                )
-
-                FilledIconButton(
-                    onClick = {
-                        if (userInput.isNotBlank()) {
-                            val userMessage = userInput
-                            userInput = ""
-                            isLoading = true
-                            messages = messages + Message(userMessage, MessageType.USER)
-                            
-                            scope.launch {
-                                try {
-                                    val response = deepSeekApi.getChatResponse(userMessage, currentLanguage)
-                                    messages = messages + Message(response, MessageType.PRIEST)
-                                } catch (e: Exception) {
-                                    messages = messages + Message(errorMessage, MessageType.PRIEST)
-                                } finally {
-                                    isLoading = false
-                                }
-                            }
-                        }
-                    },
-                    enabled = userInput.isNotBlank() && !isLoading
-                ) {
-                    if (isLoading) {
-                        CircularProgressIndicator(
-                            modifier = Modifier.size(24.dp),
-                            color = MaterialTheme.colorScheme.onPrimary
-                        )
-                    } else {
-                        Icon(
-                            Icons.Default.Send,
-                            contentDescription = stringResource(id = R.string.send_message)
-                        )
-                    }
-                }
-            }
-        }
-    }
+    
+    Text(
+        text = displayedText,
+        style = style,
+        modifier = modifier
+    )
 }
 
 @Composable
 fun ChatMessage(
     message: Message,
+    onAnimationCompleted: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     Row(
@@ -456,22 +376,18 @@ fun ChatMessage(
                 MaterialTheme.colorScheme.secondaryContainer,
             modifier = Modifier.widthIn(max = 340.dp)
         ) {
-            Row(
-                modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                if (message.type == MessageType.PRIEST) {
-                    Icon(
-                        Icons.Default.Church,
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(24.dp)
-                            .padding(end = 8.dp)
-                    )
-                }
+            if (message.type == MessageType.PRIEST && message.isAnimated && !message.isCompleted) {
+                AnimatedText(
+                    text = message.text,
+                    style = MaterialTheme.typography.bodyLarge,
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+                    onAnimationCompleted = onAnimationCompleted
+                )
+            } else {
                 Text(
                     text = message.text,
-                    style = MaterialTheme.typography.bodyLarge
+                    style = MaterialTheme.typography.bodyLarge,
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
                 )
             }
         }
@@ -480,7 +396,9 @@ fun ChatMessage(
 
 data class Message(
     val text: String,
-    val type: MessageType
+    val type: MessageType,
+    val isAnimated: Boolean = false,
+    val isCompleted: Boolean = !isAnimated
 )
 
 enum class MessageType {
@@ -508,5 +426,197 @@ fun SplashScreen(onSplashFinished: () -> Unit) {
                 .padding(32.dp),
             contentScale = ContentScale.Fit
         )
+    }
+}
+
+@Composable
+fun ConfesionScreen(
+    modifier: Modifier = Modifier,
+    currentLanguage: String
+) {
+    var userInput by remember { mutableStateOf("") }
+    var messages by remember { mutableStateOf(listOf<Message>()) }
+    var isLoading by remember { mutableStateOf(false) }
+    var showConfirmationButtons by remember { mutableStateOf(false) }
+    var confessionEnded by remember { mutableStateOf(false) }
+    val deepSeekApi = remember { DeepSeekApi() }
+    val scope = rememberCoroutineScope()
+    
+    // Obtener los strings fuera de la corrutina
+    val errorMessage = stringResource(id = R.string.api_error)
+    val initialMessage = stringResource(id = R.string.initial_confession_message)
+    val greetingUser = stringResource(id = R.string.confession_greeting_user)
+    val greetingPriest = stringResource(id = R.string.confession_greeting_priest)
+    val continueMessages = stringArrayResource(id = R.array.continue_confession_priest)
+    val finalBlessings = stringArrayResource(id = R.array.final_blessings)
+
+    // Función para marcar un mensaje como completado
+    fun completeMessage(index: Int) {
+        messages = messages.mapIndexed { i, message ->
+            if (i == index) message.copy(isCompleted = true) else message
+        }
+    }
+
+    // Función para añadir mensajes secuencialmente
+    suspend fun addPriestMessages(newMessages: List<String>) {
+        for (message in newMessages) {
+            messages = messages + Message(message, MessageType.PRIEST, isAnimated = true)
+            // Esperar a que el mensaje actual se complete antes de añadir el siguiente
+            while (messages.last().isAnimated && !messages.last().isCompleted) {
+                delay(100)
+            }
+        }
+    }
+    
+    // Mensajes iniciales
+    LaunchedEffect(initialMessage) {
+        if (messages.isEmpty()) {
+            messages = listOf(Message(greetingUser, MessageType.USER))
+            addPriestMessages(listOf(greetingPriest, initialMessage))
+        }
+    }
+
+    // Función para dividir el texto en mensajes
+    fun splitResponseIntoMessages(response: String): List<String> {
+        // Dividir por párrafos (líneas vacías)
+        val byParagraphs = response.split("\n\n").filter { it.isNotBlank() }
+        if (byParagraphs.size > 1) return byParagraphs
+
+        // Si no hay párrafos, dividir por puntos seguidos de espacio
+        val sentences = response.split(". ").filter { it.isNotBlank() }
+            .map { if (!it.endsWith(".")) "$it." else it }
+        
+        // Si hay menos de 2 oraciones, devolver el texto original como único mensaje
+        if (sentences.size < 2) return listOf(response)
+        
+        // Agrupar las oraciones en mensajes más naturales
+        return sentences.chunked(2) { chunk -> chunk.joinToString(" ") }
+    }
+
+    Column(
+        modifier = modifier.fillMaxSize()
+    ) {
+        LazyColumn(
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp),
+            reverseLayout = true
+        ) {
+            items(messages.asReversed()) { message ->
+                ChatMessage(
+                    message = message,
+                    onAnimationCompleted = {
+                        val index = messages.indexOf(message)
+                        if (index != -1) {
+                            completeMessage(index)
+                        }
+                    },
+                    modifier = Modifier.padding(vertical = 4.dp)
+                )
+            }
+        }
+
+        // Botones de confirmación
+        if (showConfirmationButtons && !confessionEnded) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp, vertical = 8.dp),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                OutlinedButton(
+                    onClick = {
+                        showConfirmationButtons = false
+                        confessionEnded = true
+                        scope.launch {
+                            addPriestMessages(listOf(finalBlessings.random()))
+                        }
+                    },
+                    modifier = Modifier.weight(1f)
+                ) {
+                    Text(stringResource(id = R.string.end_confession))
+                }
+                
+                Button(
+                    onClick = { 
+                        showConfirmationButtons = false
+                        scope.launch {
+                            addPriestMessages(listOf(continueMessages.random()))
+                        }
+                    },
+                    modifier = Modifier.weight(1f)
+                ) {
+                    Text(stringResource(id = R.string.continue_button))
+                }
+            }
+        }
+
+        // Area de entrada de texto
+        if (!showConfirmationButtons && !confessionEnded) {
+            Surface(
+                modifier = Modifier.fillMaxWidth(),
+                shadowElevation = 8.dp
+            ) {
+                Row(
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    TextField(
+                        value = userInput,
+                        onValueChange = { userInput = it },
+                        enabled = !isLoading,
+                        modifier = Modifier
+                            .weight(1f)
+                            .padding(end = 8.dp),
+                        placeholder = { Text(stringResource(id = R.string.type_message)) },
+                        colors = TextFieldDefaults.colors(
+                            unfocusedContainerColor = MaterialTheme.colorScheme.surface,
+                            focusedContainerColor = MaterialTheme.colorScheme.surface
+                        )
+                    )
+
+                    FilledIconButton(
+                        onClick = {
+                            if (userInput.isNotBlank()) {
+                                val userMessage = userInput
+                                userInput = ""
+                                isLoading = true
+                                messages = messages + Message(userMessage, MessageType.USER)
+                                
+                                scope.launch {
+                                    try {
+                                        val response = deepSeekApi.getChatResponse(userMessage, currentLanguage)
+                                        val messagesList = splitResponseIntoMessages(response)
+                                        addPriestMessages(messagesList)
+                                        delay(1000)
+                                        showConfirmationButtons = true
+                                    } catch (e: Exception) {
+                                        addPriestMessages(listOf(errorMessage))
+                                    } finally {
+                                        isLoading = false
+                                    }
+                                }
+                            }
+                        },
+                        enabled = userInput.isNotBlank() && !isLoading
+                    ) {
+                        if (isLoading) {
+                            CircularProgressIndicator(
+                                modifier = Modifier.size(24.dp),
+                                color = MaterialTheme.colorScheme.onPrimary
+                            )
+                        } else {
+                            Icon(
+                                Icons.Default.Send,
+                                contentDescription = stringResource(id = R.string.send_message)
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 }

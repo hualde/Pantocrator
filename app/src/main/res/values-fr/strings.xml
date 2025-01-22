@@ -8,7 +8,51 @@
     <string name="back">Retour</string>
     <string name="confession_button">Commencer la Confession</string>
     <string name="settings_button">Paramètres</string>
-    <string name="initial_confession_message">Je vous salue Marie très pure. Bienvenue mon enfant, vous êtes dans un espace sûr pour confesser vos péchés. Qu\'est-ce qui vous amène ici ?</string>
+    <string name="confession_greeting_user">Je vous salue Marie Très Pure</string>
+    <string name="confession_greeting_priest">Conçue sans péché</string>
+    <string name="initial_confession_message">Bienvenue mon enfant, vous êtes dans un espace sûr pour confesser vos péchés. Qu\'est-ce qui vous amène ici ?</string>
     <string name="type_message">Écrivez votre message...</string>
     <string name="send_message">Envoyer le message</string>
+    <string name="continue_confession">Y a-t-il autre chose que vous souhaitez confesser ?</string>
+    <string name="end_confession">J\'ai terminé</string>
+    <string name="continue_button">Continuer la confession</string>
+    <string-array name="final_blessings">
+        <item>Allez en paix et ne péchez plus. Je vous absous de vos péchés au nom du Père, et du Fils, et du Saint-Esprit. Amen.</item>
+        <item>Que Dieu, le Père miséricordieux, qui a réconcilié le monde avec lui par la mort et la résurrection de son Fils, vous accorde le pardon et la paix. Je vous absous de vos péchés au nom du Père, et du Fils, et du Saint-Esprit. Amen.</item>
+        <item>Le Seigneur a pardonné vos péchés. Allez en paix et que sa miséricorde vous accompagne toujours. Je vous absous au nom du Père, et du Fils, et du Saint-Esprit. Amen.</item>
+        <item>Que la Passion de notre Seigneur Jésus-Christ, l\'intercession de la Bienheureuse Vierge Marie et de tous les saints, tout le bien que vous ferez et les souffrances que vous endurerez, vous servent de remède pour vos péchés. Je vous absous au nom du Père, et du Fils, et du Saint-Esprit. Amen.</item>
+    </string-array>
+    <string-array name="continue_confession_priest">
+        <item>Continuez, mon enfant. Dites-moi ce qui pèse encore sur votre conscience.</item>
+        <item>Je vous écoute attentivement. Quel autre péché souhaitez-vous confesser ?</item>
+        <item>Poursuivez, mon enfant. Le Seigneur est là pour vous écouter et vous pardonner.</item>
+        <item>En toute confiance, dites-moi ce qui trouble encore votre âme.</item>
+        <item>Dieu est miséricordieux. Partagez avec moi ce que vous souhaitez encore confesser.</item>
+    </string-array>
+    <string-array name="commandments">
+        <item>1. Tu aimeras Dieu de tout ton cœur</item>
+        <item>2. Tu ne prononceras pas le nom de Dieu en vain</item>
+        <item>3. Tu sanctifieras le jour du Seigneur</item>
+        <item>4. Tu honoreras ton père et ta mère</item>
+        <item>5. Tu ne tueras pas</item>
+        <item>6. Tu ne commettras pas d\'adultère</item>
+        <item>7. Tu ne voleras pas</item>
+        <item>8. Tu ne mentiras pas</item>
+        <item>9. Tu n\'auras pas de pensées ni de désirs impurs</item>
+        <item>10. Tu ne convoiteras pas les biens d\'autrui</item>
+    </string-array>
+
+    <string-array name="common_prayers">
+        <item>Notre Père</item>
+        <item>Je vous salue Marie</item>
+        <item>Gloire au Père</item>
+        <item>Acte de Contrition</item>
+        <item>Saint Rosaire</item>
+        <item>Salve Regina</item>
+        <item>Je crois en Dieu</item>
+        <item>Chemin de Croix</item>
+    </string-array>
+
+    <string name="penance_format">Comme pénitence, je vous invite à prier %1$s, en méditant particulièrement sur %2$s.</string>
+    <string name="commandment_reference">Ce péché est contre le commandement : %1$s</string>
 </resources> 

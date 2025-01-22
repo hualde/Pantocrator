@@ -8,8 +8,52 @@
     <string name="back">Back</string>
     <string name="confession_button">Start Confession</string>
     <string name="settings_button">Settings</string>
-    <string name="initial_confession_message">Hail Mary Most Pure. Welcome child, you are in a safe space to confess your sins. What brings you here?</string>
+    <string name="confession_greeting_user">Hail Mary Most Pure</string>
+    <string name="confession_greeting_priest">Conceived without sin</string>
+    <string name="initial_confession_message">Welcome my child, you are in a safe space to confess your sins. What brings you here?</string>
     <string name="type_message">Type your message...</string>
     <string name="send_message">Send message</string>
     <string name="background_music">Background music</string>
+    <string name="continue_confession">Is there anything else you would like to confess?</string>
+    <string name="end_confession">I am finished</string>
+    <string name="continue_button">Continue confessing</string>
+    <string-array name="final_blessings">
+        <item>Go in peace and sin no more. I absolve you from your sins in the name of the Father, and of the Son, and of the Holy Spirit. Amen.</item>
+        <item>May God, the merciful Father, who reconciled the world to himself through the death and resurrection of his Son, grant you pardon and peace. I absolve you from your sins in the name of the Father, and of the Son, and of the Holy Spirit. Amen.</item>
+        <item>The Lord has forgiven your sins. Go in peace and may His mercy be with you always. I absolve you in the name of the Father, and of the Son, and of the Holy Spirit. Amen.</item>
+        <item>May the Passion of our Lord Jesus Christ, the intercession of the Blessed Virgin Mary and all the saints, whatever good you do and suffering you endure, heal your sins. I absolve you in the name of the Father, and of the Son, and of the Holy Spirit. Amen.</item>
+    </string-array>
+    <string-array name="continue_confession_priest">
+        <item>Continue, my child. Tell me what else weighs on your conscience.</item>
+        <item>I\'m listening carefully. What other sin would you like to confess?</item>
+        <item>Go on, my child. The Lord is here to listen and forgive you.</item>
+        <item>With trust, tell me what else troubles your soul.</item>
+        <item>God is merciful. Share with me what else you wish to confess.</item>
+    </string-array>
+    <string-array name="commandments">
+        <item>1. You shall love God above all things</item>
+        <item>2. You shall not take the name of the Lord in vain</item>
+        <item>3. Remember to keep holy the Lord\'s Day</item>
+        <item>4. Honor your father and mother</item>
+        <item>5. You shall not kill</item>
+        <item>6. You shall not commit adultery</item>
+        <item>7. You shall not steal</item>
+        <item>8. You shall not bear false witness</item>
+        <item>9. You shall not consent to impure thoughts or desires</item>
+        <item>10. You shall not covet your neighbor\'s goods</item>
+    </string-array>
+
+    <string-array name="common_prayers">
+        <item>Our Father</item>
+        <item>Hail Mary</item>
+        <item>Glory Be</item>
+        <item>Act of Contrition</item>
+        <item>Holy Rosary</item>
+        <item>Hail Holy Queen</item>
+        <item>The Apostles\' Creed</item>
+        <item>Stations of the Cross</item>
+    </string-array>
+
+    <string name="penance_format">As penance, I invite you to pray %1$s, meditating especially on %2$s.</string>
+    <string name="commandment_reference">This sin is against the commandment: %1$s</string>
 </resources> 

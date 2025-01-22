@@ -8,7 +8,51 @@
     <string name="back">Indietro</string>
     <string name="confession_button">Inizia Confessione</string>
     <string name="settings_button">Impostazioni</string>
-    <string name="initial_confession_message">Ave Maria Purissima. Benvenuto figlio/a, sei in uno spazio sicuro per confessare i tuoi peccati. Cosa ti porta qui?</string>
+    <string name="confession_greeting_user">Ave Maria Purissima</string>
+    <string name="confession_greeting_priest">Concepita senza peccato</string>
+    <string name="initial_confession_message">Benvenuto figlio mio, sei in uno spazio sicuro per confessare i tuoi peccati. Cosa ti porta qui?</string>
     <string name="type_message">Scrivi il tuo messaggio...</string>
     <string name="send_message">Invia messaggio</string>
+    <string name="continue_confession">C\'è qualcos\'altro che vorresti confessare?</string>
+    <string name="end_confession">Ho finito</string>
+    <string name="continue_button">Continuare la confessione</string>
+    <string-array name="final_blessings">
+        <item>Va\' in pace e non peccare più. Io ti assolvo dai tuoi peccati nel nome del Padre, del Figlio e dello Spirito Santo. Amen.</item>
+        <item>Dio, Padre misericordioso, che ha riconciliato a sé il mondo nella morte e risurrezione del suo Figlio, ti conceda il perdono e la pace. Io ti assolvo dai tuoi peccati nel nome del Padre, del Figlio e dello Spirito Santo. Amen.</item>
+        <item>Il Signore ha perdonato i tuoi peccati. Va\' in pace e che la sua misericordia ti accompagni sempre. Io ti assolvo nel nome del Padre, del Figlio e dello Spirito Santo. Amen.</item>
+        <item>La Passione di nostro Signore Gesù Cristo, l\'intercessione della Beata Vergine Maria e di tutti i santi, il bene che farai e il male che dovrai sopportare, ti siano di aiuto per la remissione dei tuoi peccati. Io ti assolvo nel nome del Padre, del Figlio e dello Spirito Santo. Amen.</item>
+    </string-array>
+    <string-array name="continue_confession_priest">
+        <item>Continua, figlio mio. Dimmi cos\'altro pesa sulla tua coscienza.</item>
+        <item>Ti ascolto con attenzione. Quale altro peccato vorresti confessare?</item>
+        <item>Vai avanti, figlio mio. Il Signore è qui per ascoltarti e perdonarti.</item>
+        <item>Con fiducia, dimmi cos\'altro turba la tua anima.</item>
+        <item>Dio è misericordioso. Condividi con me cos\'altro desideri confessare.</item>
+    </string-array>
+    <string-array name="commandments">
+        <item>1. Io sono il Signore Dio tuo, non avrai altro Dio fuori di me</item>
+        <item>2. Non nominare il nome di Dio invano</item>
+        <item>3. Ricordati di santificare le feste</item>
+        <item>4. Onora il padre e la madre</item>
+        <item>5. Non uccidere</item>
+        <item>6. Non commettere atti impuri</item>
+        <item>7. Non rubare</item>
+        <item>8. Non dire falsa testimonianza</item>
+        <item>9. Non desiderare la donna d\'altri</item>
+        <item>10. Non desiderare la roba d\'altri</item>
+    </string-array>
+
+    <string-array name="common_prayers">
+        <item>Padre Nostro</item>
+        <item>Ave Maria</item>
+        <item>Gloria al Padre</item>
+        <item>Atto di Contrizione</item>
+        <item>Santo Rosario</item>
+        <item>Salve Regina</item>
+        <item>Credo</item>
+        <item>Via Crucis</item>
+    </string-array>
+
+    <string name="penance_format">Come penitenza, ti invito a pregare %1$s, meditando in particolare su %2$s.</string>
+    <string name="commandment_reference">Questo peccato è contro il comandamento: %1$s</string>
 </resources> 
