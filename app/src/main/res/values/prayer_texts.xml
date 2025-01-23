@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Oraciones Principales -->
+    <string name="prayer_padre_nuestro">Padre Nuestro:\n
+\n
+Padre nuestro,
+que estás en el cielo,
+santificado sea tu Nombre;\n
+\n
+venga a nosotros tu reino;
+hágase tu voluntad 
+en la tierra como en el cielo.\n
+\n
+Danos hoy nuestro pan de cada día;
+perdona nuestras ofensas,
+como también nosotros perdonamos 
+a los que nos ofenden;\n
+\n
+no nos dejes caer en la tentación,
+y líbranos del mal.\n
+\n
+Amén.</string>
+
+    <string name="prayer_ave_maria">Ave María:\n
+\n
+Dios te salve, María,
+llena eres de gracia;
+el Señor es contigo.\n
+\n
+Bendita Tú eres 
+entre todas las mujeres,
+y bendito es el fruto de tu vientre, Jesús.\n
+\n
+Santa María, Madre de Dios,
+ruega por nosotros, pecadores,
+ahora y en la hora de nuestra muerte.\n
+\n
+Amén.</string>
+
+    <string name="prayer_gloria">Gloria:\n
+\n
+Gloria al Padre,
+y al Hijo,
+y al Espíritu Santo.\n
+\n
+Como era en el principio,
+ahora y siempre,
+por los siglos de los siglos.\n
+\n
+Amén.</string>
+
+    <string name="prayer_salve_regina">Salve Regina:\n
+\n
+Dios te salve, Reina y Madre de misericordia,
+vida, dulzura y esperanza nuestra.
+Dios te salve.\n
+\n
+A Ti clamamos los desterrados hijos de Eva,
+a Ti suspiramos, gimiendo y llorando
+en este valle de lágrimas.\n
+\n
+Ea, pues, Señora Abogada Nuestra,
+vuelve a nosotros esos tus ojos misericordiosos,
+y después de este destierro, muéstranos a Jesús,
+fruto bendito de tu vientre.\n
+\n
+¡Oh clemente, oh piadosa, oh dulce Virgen María!
+Ruega por nosotros, Santa Madre de Dios,
+para que seamos dignos de alcanzar
+las promesas de Nuestro Señor Jesucristo.\n
+\n
+Amén.</string>
+
+    <string name="prayer_fatima">Oración de Fátima:\n
+\n
+Oh Jesús mío,
+perdona nuestros pecados,
+líbranos del fuego del infierno,\n
+\n
+lleva al cielo a todas las almas,
+especialmente a las más necesitadas
+de tu misericordia.\n
+\n
+Amén.</string>
+
+    <!-- Misterios del Rosario -->
+    <string name="prayer_mysteries_joyful">Misterios Gozosos:\n
+\n
+(Lunes y sábado)\n
+\n
+1. La Anunciación del Ángel a María\n
+2. La Visitación de María a su prima Santa Isabel\n
+3. El Nacimiento de Jesús en Belén\n
+4. La Presentación del Niño Jesús en el Templo\n
+5. El Niño Jesús perdido y hallado en el Templo</string>
+
+    <string name="prayer_mysteries_sorrowful">Misterios Dolorosos:\n
+\n
+(Martes y viernes)\n
+\n
+1. La Oración de Jesús en el Huerto\n
+2. La Flagelación de Jesús atado a la columna\n
+3. La Coronación de espinas\n
+4. Jesús con la Cruz a cuestas camino del Calvario\n
+5. La Crucifixión y Muerte de Jesús</string>
+
+    <string name="prayer_mysteries_glorious">Misterios Gloriosos:\n
+\n
+(Miércoles y domingo)\n
+\n
+1. La Resurrección del Señor\n
+2. La Ascensión del Señor al cielo\n
+3. La Venida del Espíritu Santo\n
+4. La Asunción de María al cielo\n
+5. La Coronación de María como Reina y Señora de todo lo creado</string>
+
+    <string name="prayer_mysteries_luminous">Misterios Luminosos:\n
+\n
+(Jueves)\n
+\n
+1. El Bautismo de Jesús en el Jordán\n
+2. Las Bodas de Caná\n
+3. El Anuncio del Reino de Dios\n
+4. La Transfiguración\n
+5. La Institución de la Eucaristía</string>
+
+    <!-- Oraciones por Situaciones -->
+    <string name="prayer_act_of_contrition">Acto de Contrición:\n
+\n
+Señor mío Jesucristo,
+Dios y Hombre verdadero,
+Creador, Padre y Redentor mío;\n
+\n
+por ser Vos quien sois, Bondad infinita,
+y porque os amo sobre todas las cosas,
+me pesa de todo corazón haberos ofendido;\n
+\n
+también me pesa porque podéis castigarme
+con las penas del infierno.
+Ayudado de vuestra divina gracia,
+propongo firmemente nunca más pecar,
+confesarme y cumplir la penitencia
+que me fuere impuesta.\n
+\n
+Amén.</string>
+
+    <string name="prayer_magnificat">Magníficat:\n
+\n
+Proclama mi alma la grandeza del Señor,
+se alegra mi espíritu en Dios, mi salvador;
+porque ha mirado la humillación de su esclava.\n
+\n
+Desde ahora me felicitarán todas las generaciones,
+porque el Poderoso ha hecho obras grandes por mí:
+su nombre es santo,
+y su misericordia llega a sus fieles
+de generación en generación.\n
+\n
+Él hace proezas con su brazo:
+dispersa a los soberbios de corazón,
+derrama del trono a los poderosos
+y enaltece a los humildes,
+a los hambrientos los colma de bienes
+y a los ricos los despide vacíos.\n
+\n
+Auxilia a Israel, su siervo,
+acordándose de la misericordia
+-como lo había prometido a nuestros padres-
+en favor de Abrahán y su descendencia por siempre.\n
+\n
+Amén.</string>
+
+    <string name="prayer_serenity">Oración de la Serenidad:\n
+\n
+Señor, concédeme serenidad
+para aceptar las cosas que no puedo cambiar,
+valor para cambiar las que puedo
+y sabiduría para conocer la diferencia.\n
+\n
+Viviendo un día a la vez,
+disfrutando un momento a la vez,
+aceptando las adversidades
+como un camino hacia la paz.\n
+\n
+Tomando, como Él lo hizo,
+este mundo pecador tal como es,
+no como yo quisiera que fuera.
+Confiando en que Él hará todas las cosas bien
+si yo me entrego a Su voluntad.\n
+\n
+Amén.</string>
+
+    <string name="prayer_psalm_23">Salmo 23 (El Señor es mi Pastor):\n
+\n
+El Señor es mi pastor, nada me falta;
+en verdes praderas me hace recostar;
+me conduce hacia fuentes tranquilas
+y repara mis fuerzas.\n
+\n
+Me guía por el sendero justo,
+por el honor de su nombre.
+Aunque camine por cañadas oscuras,
+nada temo, porque tú vas conmigo:
+tu vara y tu cayado me sosiegan.\n
+\n
+Preparas una mesa ante mí,
+enfrente de mis enemigos;
+me unges la cabeza con perfume,
+y mi copa rebosa.\n
+\n
+Tu bondad y tu misericordia me acompañan
+todos los días de mi vida,
+y habitaré en la casa del Señor
+por años sin término.\n
+\n
+Amén.</string>
+
+    <!-- Oraciones Sacramentales -->
+    <string name="prayer_baptism">Oración del Bautismo:\n
+\n
+Padre celestial,
+te damos gracias por el don del bautismo,
+por el agua que limpia y da vida,
+por el Espíritu que renueva y fortalece,
+y por tu Hijo Jesucristo que nos llama a una nueva vida.\n
+\n
+Concede que quien sea bautizado
+muera al pecado y resucite a la vida nueva;
+que sea sepultado con Cristo en su muerte,
+que participe también de su resurrección
+y camine en novedad de vida.\n
+\n
+Amén.</string>
+
+    <string name="prayer_communion">Oración de la Comunión:\n
+\n
+Señor mío Jesucristo,
+no soy digno de que entres en mi casa,
+pero una palabra tuya bastará para sanarme.\n
+\n
+El Cuerpo de Cristo me guarde para la vida eterna.
+La Sangre de Cristo me guarde para la vida eterna.\n
+\n
+Te adoro con devoción, Dios escondido,
+oculto verdaderamente bajo estas apariencias.
+A Ti se somete mi corazón por completo,
+y se rinde totalmente al contemplarte.\n
+\n
+Amén.</string>
+
+    <string name="prayer_confession">Oración de la Confesión:
+
+Recibe, Señor, mi libertad completa.
+Recibe mi memoria, mi entendimiento y toda mi voluntad.
+Todo lo que tengo y poseo, Tú me lo has dado;
+a Ti, Señor, lo devuelvo.
+Todo es tuyo, dispón de ello según tu voluntad.
+
+Dame tu amor y tu gracia,
+que éstas me bastan.
+Dame un corazón arrepentido y humilde.
+Ayúdame a confesar mis pecados con sinceridad,
+a recibir tu perdón con gratitud,
+y a vivir una vida nueva en tu gracia.
+Amén.</string>
+
+    <string name="prayer_marriage">Bendición Matrimonial:
+
+Dios Padre, bendice y santifica este amor.
+Jesucristo, Hijo de Dios, 
+asiste con tu presencia a estos esposos,
+como estuviste en las bodas de Caná.
+Espíritu Santo, derrama tu amor
+en los corazones de esta nueva familia.
+
+Que su amor sea paciente y bondadoso,
+que no sea envidioso, ni orgulloso, ni grosero.
+Que no busque su propio interés,
+que no se irrite ni guarde rencor.
+Que se alegre con la verdad,
+que todo lo disculpe, todo lo crea,
+todo lo espere y todo lo soporte.
+
+Que su amor nunca se acabe.
+Amén.</string>
+
+    <!-- Devociones Populares -->
+    <string name="prayer_rosary">Santo Rosario:\n
+\n
+Modo de rezarlo:\n
+\n
+1. Hacer la Señal de la Cruz\n
+2. Rezar el Credo\n
+3. Rezar un Padrenuestro\n
+4. Rezar tres Avemarías\n
+5. Rezar un Gloria\n
+6. Anunciar el primer misterio\n
+7. Rezar un Padrenuestro\n
+8. Rezar diez Avemarías\n
+9. Rezar un Gloria y la Oración de Fátima\n
+10. Continuar con los siguientes misterios\n
+\n
+Al terminar:\n
+- Rezar la Salve\n
+- Letanías (opcional)\n
+- Oración final</string>
+
+    <string name="prayer_divine_mercy">Coronilla de la Divina Misericordia:\n
+\n
+Se reza usando un rosario común:\n
+\n
+1. Padre Nuestro\n
+2. Ave María\n
+3. Credo de los Apóstoles\n
+\n
+En las cuentas grandes:\n
+"Padre Eterno, te ofrezco el Cuerpo y la Sangre,
+el Alma y la Divinidad de tu amadísimo Hijo,
+nuestro Señor Jesucristo,
+como propiciación por nuestros pecados
+y los del mundo entero."\n
+\n
+En las cuentas pequeñas:\n
+"Por Su dolorosa Pasión,
+ten misericordia de nosotros
+y del mundo entero."\n
+\n
+Para terminar (tres veces):\n
+"Santo Dios, Santo Fuerte, Santo Inmortal,
+ten piedad de nosotros y del mundo entero."</string>
+
+    <string name="prayer_via_crucis">Vía Crucis:\n
+\n
+Las 14 Estaciones:\n
+\n
+1. Jesús es condenado a muerte\n
+2. Jesús carga con la cruz\n
+3. Jesús cae por primera vez\n
+4. Jesús encuentra a su Madre\n
+5. Simón de Cirene ayuda a Jesús\n
+6. La Verónica limpia el rostro de Jesús\n
+7. Jesús cae por segunda vez\n
+8. Jesús consuela a las mujeres\n
+9. Jesús cae por tercera vez\n
+10. Jesús es despojado de sus vestiduras\n
+11. Jesús es clavado en la cruz\n
+12. Jesús muere en la cruz\n
+13. Jesús es bajado de la cruz\n
+14. Jesús es sepultado\n
+\n
+En cada estación:\n
+- Anunciar la estación\n
+- Reflexionar sobre el momento\n
+- Rezar un Padrenuestro, Avemaría y Gloria</string>
+
+    <!-- Oraciones del Día -->
+    <string name="prayer_morning">Oración de la Mañana:\n
+\n
+Señor, en el silencio de este día que nace,
+vengo a pedirte paz, sabiduría y fuerza.\n
+\n
+Hoy quiero mirar el mundo con ojos llenos de amor;
+ser paciente, comprensivo, humilde, suave y bueno.
+Ver detrás de las apariencias a tus hijos,
+como Tú mismo los ves, para así
+poder apreciar la bondad de cada uno.\n
+\n
+Cierra mis oídos a toda murmuración,
+guarda mi lengua de toda maledicencia.
+Que sólo los pensamientos que bendigan
+permanezcan en mi espíritu.\n
+\n
+Quiero ser tan bien intencionado y justo
+que todos los que se acerquen a mí,
+sientan tu presencia.
+Revísteme de tu bondad, Señor,
+y haz que durante este día yo te refleje.\n
+\n
+Amén.</string>
+
+    <string name="prayer_angelus">Ángelus:\n
+\n
+V. El Ángel del Señor anunció a María.\n
+R. Y concibió por obra del Espíritu Santo.\n
+    Dios te salve María...\n
+\n
+V. He aquí la esclava del Señor.\n
+R. Hágase en mí según tu palabra.\n
+    Dios te salve María...\n
+\n
+V. Y el Verbo se hizo carne.\n
+R. Y habitó entre nosotros.\n
+    Dios te salve María...\n
+\n
+V. Ruega por nosotros, Santa Madre de Dios.\n
+R. Para que seamos dignos de alcanzar las promesas de Nuestro Señor Jesucristo.\n
+\n
+Oremos:\n
+Derrama, Señor, tu gracia sobre nosotros,
+que, por el anuncio del Ángel,
+hemos conocido la encarnación de tu Hijo,
+para que lleguemos, por su pasión y su cruz,
+a la gloria de la resurrección.
+Por Jesucristo, nuestro Señor.\n
+\n
+Amén.</string>
+
+    <string name="prayer_night">Oración de la Noche:\n
+\n
+Gracias, Señor, por este día que termina,
+por tus bendiciones y tu protección.
+Perdona mis faltas y mis errores.
+Te ofrezco mi descanso y mi sueño.\n
+\n
+Protege a mi familia y a todos mis seres queridos.
+Da consuelo a los que sufren,
+esperanza a los que dudan,
+y tu paz a todos los corazones.\n
+\n
+Bajo tu amparo nos acogemos,
+Santa Madre de Dios;
+no deseches las súplicas
+que te dirigimos en nuestras necesidades,
+antes bien, líbranos de todo peligro,
+¡oh Virgen gloriosa y bendita!\n
+\n
+Amén.</string>
+
+    <string name="prayer_examination">Examen de Conciencia:\n
+\n
+1. Acción de gracias:\n
+Gracias, Señor, por los dones recibidos hoy...\n
+\n
+2. Petición de luz:\n
+Espíritu Santo, ayúdame a ver con claridad...\n
+\n
+3. Examen:\n
+- ¿Cómo he actuado hoy con Dios?\n
+- ¿Cómo he tratado a los demás?\n
+- ¿Qué bien he dejado de hacer?\n
+- ¿Qué podría haber hecho mejor?\n
+\n
+4. Arrepentimiento:\n
+Perdón, Señor, por mis faltas...\n
+\n
+5. Propósito:\n
+Mañana, con tu ayuda, procuraré...\n
+\n
+Padre nuestro...\n
+\n
+Amén.</string>
+
+    <!-- Salmos y otras oraciones situacionales -->
+    <string name="prayer_psalm_51">Salmo 51 (Miserere):
+
+Ten piedad de mí, oh Dios, conforme a tu misericordia;
+Conforme a la multitud de tus piedades borra mis rebeliones.
+Lávame más y más de mi maldad,
+Y límpiame de mi pecado.
+
+Porque yo reconozco mis rebeliones,
+Y mi pecado está siempre delante de mí.
+Contra ti, contra ti solo he pecado,
+Y he hecho lo malo delante de tus ojos.
+
+Crea en mí, oh Dios, un corazón limpio,
+Y renueva un espíritu recto dentro de mí.
+No me eches de delante de ti,
+Y no quites de mí tu santo Espíritu.
+
+Los sacrificios de Dios son el espíritu quebrantado;
+Al corazón contrito y humillado no despreciarás tú, oh Dios.</string>
+
+    <string name="prayer_san_miguel">Oración a San Miguel Arcángel:
+
+San Miguel Arcángel,
+defiéndenos en la batalla.
+Sé nuestro amparo
+contra la perversidad y asechanzas
+del demonio.
+Reprímale Dios, pedimos suplicantes,
+y tú, Príncipe de la Milicia Celestial,
+arroja al infierno con el divino poder
+a Satanás y a los otros espíritus malignos
+que andan dispersos por el mundo
+para la perdición de las almas.
+Amén.</string>
+
+    <string name="prayer_psalm_91">Salmo 91 (Protección):
+
+El que habita al abrigo del Altísimo
+Morará bajo la sombra del Omnipotente.
+Diré yo a Jehová: Esperanza mía, y castillo mío;
+Mi Dios, en quien confiaré.
+
+Él te librará del lazo del cazador,
+De la peste destructora.
+Con sus plumas te cubrirá,
+Y debajo de sus alas estarás seguro;
+Escudo y adarga es su verdad.
+
+No temerás el terror nocturno,
+Ni saeta que vuele de día,
+Ni pestilencia que ande en oscuridad,
+Ni mortandad que en medio del día destruya.
+
+Pues a sus ángeles mandará acerca de ti,
+Que te guarden en todos tus caminos.</string>
+
+    <string name="prayer_te_deum">Te Deum:
+
+A ti, oh Dios, te alabamos,
+a ti, Señor, te reconocemos.
+A ti, eterno Padre,
+te venera toda la creación.
+
+Los ángeles todos,
+los cielos y todas las potestades te honran.
+Los querubines y serafines
+te cantan sin cesar:
+
+Santo, Santo, Santo es el Señor,
+Dios del universo.
+Los cielos y la tierra
+están llenos de la majestad de tu gloria.
+
+A ti te ensalza
+el glorioso coro de los apóstoles,
+la multitud admirable de los profetas,
+el blanco ejército de los mártires.
+
+A ti la Iglesia santa,
+extendida por toda la tierra,
+te proclama:
+Padre de inmensa majestad.
+Amén.</string>
+</resources> 

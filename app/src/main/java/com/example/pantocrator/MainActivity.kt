@@ -647,92 +647,160 @@ fun PrayerGuideScreen(
     modifier: Modifier = Modifier
 ) {
     var selectedCategoryIndex by remember { mutableStateOf<Int?>(null) }
+    var selectedPrayer by remember { mutableStateOf<String?>(null) }
     
     Column(
         modifier = modifier
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        if (selectedCategoryIndex == null) {
-            // Mostrar lista de categorías
-            val categories = stringArrayResource(id = R.array.prayer_categories)
-            LazyColumn(
-                verticalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                items(categories.size) { index ->
-                    Surface(
-                        onClick = { selectedCategoryIndex = index },
-                        shape = MaterialTheme.shapes.medium,
-                        color = MaterialTheme.colorScheme.surfaceVariant,
-                        modifier = Modifier.fillMaxWidth()
+        when {
+            selectedPrayer != null -> {
+                // Mostrar el texto completo de la oración
+                Column(
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    IconButton(
+                        onClick = { selectedPrayer = null }
                     ) {
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(16.dp),
-                            horizontalArrangement = Arrangement.SpaceBetween,
-                            verticalAlignment = Alignment.CenterVertically
+                        Icon(Icons.Default.ArrowBack, contentDescription = "Volver")
+                    }
+                    
+                    Text(
+                        text = stringResource(id = getResourceIdByName(selectedPrayer!!)),
+                        style = MaterialTheme.typography.bodyLarge,
+                        modifier = Modifier.padding(16.dp)
+                    )
+                }
+            }
+            
+            selectedCategoryIndex == null -> {
+                // Mostrar lista de categorías
+                val categories = stringArrayResource(id = R.array.prayer_categories)
+                LazyColumn(
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    items(categories.size) { index ->
+                        Surface(
+                            onClick = { selectedCategoryIndex = index },
+                            shape = MaterialTheme.shapes.medium,
+                            color = MaterialTheme.colorScheme.surfaceVariant,
+                            modifier = Modifier.fillMaxWidth()
                         ) {
-                            Text(
-                                text = categories[index],
-                                style = MaterialTheme.typography.titleMedium
-                            )
-                            Icon(
-                                Icons.Default.ChevronRight,
-                                contentDescription = null
-                            )
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(16.dp),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Text(
+                                    text = categories[index],
+                                    style = MaterialTheme.typography.titleMedium
+                                )
+                                Icon(
+                                    Icons.Default.ChevronRight,
+                                    contentDescription = null
+                                )
+                            }
                         }
                     }
                 }
             }
-        } else {
-            // Mostrar oraciones de la categoría seleccionada
-            Column(
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                IconButton(
-                    onClick = { selectedCategoryIndex = null }
+            
+            else -> {
+                // Mostrar oraciones de la categoría seleccionada
+                Column(
+                    modifier = Modifier.fillMaxWidth()
                 ) {
-                    Icon(Icons.Default.ArrowBack, contentDescription = "Volver")
-                }
-                
-                val categories = stringArrayResource(id = R.array.prayer_categories)
-                // Usar el operador !! ya que sabemos que selectedCategoryIndex no es null en este punto
-                Text(
-                    text = categories[selectedCategoryIndex!!],
-                    style = MaterialTheme.typography.headlineSmall,
-                    modifier = Modifier.padding(vertical = 16.dp)
-                )
-                
-                val prayers = when (selectedCategoryIndex!!) {
-                    0 -> stringArrayResource(R.array.main_prayers)
-                    1 -> stringArrayResource(R.array.rosary_mysteries)
-                    2 -> stringArrayResource(R.array.situational_prayers)
-                    3 -> stringArrayResource(R.array.sacramental_prayers)
-                    4 -> stringArrayResource(R.array.popular_devotions)
-                    5 -> stringArrayResource(R.array.daily_prayers)
-                    else -> emptyArray()
-                }
-                
-                LazyColumn(
-                    verticalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
-                    items(prayers) { prayer ->
-                        Surface(
-                            onClick = { /* TODO: Mostrar detalles de la oración */ },
-                            shape = MaterialTheme.shapes.small,
-                            color = MaterialTheme.colorScheme.surface,
-                            modifier = Modifier.fillMaxWidth()
-                        ) {
-                            Text(
-                                text = prayer,
-                                style = MaterialTheme.typography.bodyLarge,
-                                modifier = Modifier.padding(16.dp)
-                            )
+                    IconButton(
+                        onClick = { selectedCategoryIndex = null }
+                    ) {
+                        Icon(Icons.Default.ArrowBack, contentDescription = "Volver")
+                    }
+                    
+                    val categories = stringArrayResource(id = R.array.prayer_categories)
+                    Text(
+                        text = categories[selectedCategoryIndex!!],
+                        style = MaterialTheme.typography.headlineSmall,
+                        modifier = Modifier.padding(vertical = 16.dp)
+                    )
+                    
+                    val prayers = when (selectedCategoryIndex!!) {
+                        0 -> stringArrayResource(R.array.main_prayers)
+                        1 -> stringArrayResource(R.array.rosary_mysteries)
+                        2 -> stringArrayResource(R.array.situational_prayers)
+                        3 -> stringArrayResource(R.array.sacramental_prayers)
+                        4 -> stringArrayResource(R.array.popular_devotions)
+                        5 -> stringArrayResource(R.array.daily_prayers)
+                        else -> emptyArray()
+                    }
+                    
+                    val prayerResourceNames = when (selectedCategoryIndex!!) {
+                        0 -> listOf("prayer_padre_nuestro", "prayer_ave_maria", "prayer_gloria", "prayer_salve_regina", "prayer_fatima")
+                        1 -> listOf("prayer_mysteries_joyful", "prayer_mysteries_sorrowful", "prayer_mysteries_glorious", "prayer_mysteries_luminous")
+                        2 -> listOf("prayer_act_of_contrition", "prayer_psalm_51", "prayer_san_miguel", "prayer_psalm_91", "prayer_te_deum", "prayer_magnificat", "prayer_serenity", "prayer_psalm_23")
+                        3 -> listOf("prayer_baptism", "prayer_communion", "prayer_confession", "prayer_marriage")
+                        4 -> listOf("prayer_rosary", "prayer_divine_mercy", "prayer_via_crucis")
+                        5 -> listOf("prayer_morning", "prayer_angelus", "prayer_night", "prayer_examination")
+                        else -> emptyList()
+                    }
+                    
+                    LazyColumn(
+                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        items(prayers.size) { index ->
+                            Surface(
+                                onClick = { selectedPrayer = prayerResourceNames[index] },
+                                shape = MaterialTheme.shapes.small,
+                                color = MaterialTheme.colorScheme.surface,
+                                modifier = Modifier.fillMaxWidth()
+                            ) {
+                                Text(
+                                    text = prayers[index],
+                                    style = MaterialTheme.typography.bodyLarge,
+                                    modifier = Modifier.padding(16.dp)
+                                )
+                            }
                         }
                     }
                 }
             }
         }
+    }
+}
+
+// Función auxiliar para obtener el ID del recurso por nombre
+private fun getResourceIdByName(resourceName: String): Int {
+    return when (resourceName) {
+        "prayer_padre_nuestro" -> R.string.prayer_padre_nuestro
+        "prayer_ave_maria" -> R.string.prayer_ave_maria
+        "prayer_gloria" -> R.string.prayer_gloria
+        "prayer_salve_regina" -> R.string.prayer_salve_regina
+        "prayer_fatima" -> R.string.prayer_fatima
+        "prayer_mysteries_joyful" -> R.string.prayer_mysteries_joyful
+        "prayer_mysteries_sorrowful" -> R.string.prayer_mysteries_sorrowful
+        "prayer_mysteries_glorious" -> R.string.prayer_mysteries_glorious
+        "prayer_mysteries_luminous" -> R.string.prayer_mysteries_luminous
+        "prayer_act_of_contrition" -> R.string.prayer_act_of_contrition
+        "prayer_psalm_51" -> R.string.prayer_psalm_51
+        "prayer_san_miguel" -> R.string.prayer_san_miguel
+        "prayer_psalm_91" -> R.string.prayer_psalm_91
+        "prayer_te_deum" -> R.string.prayer_te_deum
+        "prayer_magnificat" -> R.string.prayer_magnificat
+        "prayer_serenity" -> R.string.prayer_serenity
+        "prayer_psalm_23" -> R.string.prayer_psalm_23
+        "prayer_baptism" -> R.string.prayer_baptism
+        "prayer_communion" -> R.string.prayer_communion
+        "prayer_confession" -> R.string.prayer_confession
+        "prayer_marriage" -> R.string.prayer_marriage
+        "prayer_rosary" -> R.string.prayer_rosary
+        "prayer_divine_mercy" -> R.string.prayer_divine_mercy
+        "prayer_via_crucis" -> R.string.prayer_via_crucis
+        "prayer_morning" -> R.string.prayer_morning
+        "prayer_angelus" -> R.string.prayer_angelus
+        "prayer_night" -> R.string.prayer_night
+        "prayer_examination" -> R.string.prayer_examination
+        else -> throw IllegalArgumentException("Recurso no encontrado: $resourceName")
     }
 }
