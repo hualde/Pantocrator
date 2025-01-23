@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Prières Principales -->
+    <string name="prayer_padre_nuestro">Notre Père:\n
+\n
+Notre Père, qui es aux cieux,
+que ton nom soit sanctifié,\n
+\n
+que ton règne vienne,
+que ta volonté soit faite
+sur la terre comme au ciel.\n
+\n
+Donne-nous aujourd\'hui notre pain de ce jour.
+Pardonne-nous nos offenses,
+comme nous pardonnons aussi
+à ceux qui nous ont offensés.\n
+\n
+Et ne nous laisse pas entrer en tentation,
+mais délivre-nous du Mal.\n
+\n
+Amen.</string>
+
+    <string name="prayer_ave_maria">Je vous salue Marie:\n
+\n
+Je vous salue Marie, pleine de grâce;
+Le Seigneur est avec vous.\n
+\n
+Vous êtes bénie entre toutes les femmes,
+Et Jésus, le fruit de vos entrailles, est béni.\n
+\n
+Sainte Marie, Mère de Dieu,
+Priez pour nous pauvres pécheurs,
+Maintenant, et à l\'heure de notre mort.\n
+\n
+Amen.</string>
+
+    <string name="prayer_gloria">Gloire au Père:\n
+\n
+Gloire au Père,
+et au Fils,
+et au Saint-Esprit.\n
+\n
+Comme il était au commencement,
+maintenant et toujours,
+pour les siècles des siècles.\n
+\n
+Amen.</string>
+
+    <string name="prayer_salve_regina">Salve Regina:\n
+\n
+Salut, ô Reine, Mère de miséricorde,
+notre vie, notre douceur et notre espérance, salut!\n
+\n
+Enfants d\'Ève, exilés, nous crions vers vous.
+Vers vous nous soupirons, gémissant et pleurant
+dans cette vallée de larmes.\n
+\n
+Ô vous, notre Avocate,
+tournez vers nous vos regards miséricordieux.
+Et après cet exil, montrez-nous Jésus,
+le fruit béni de vos entrailles.\n
+\n
+Ô clémente, ô miséricordieuse, ô douce Vierge Marie!
+Priez pour nous, Sainte Mère de Dieu,
+afin que nous devenions dignes des promesses du Christ.\n
+\n
+Amen.</string>
+
+    <string name="prayer_fatima">Prière de Fatima:\n
+\n
+Ô mon Jésus,
+pardonnez-nous nos péchés,
+préservez-nous du feu de l\'enfer.\n
+\n
+Conduisez au ciel toutes les âmes,
+surtout celles qui ont le plus besoin
+de votre miséricorde.\n
+\n
+Amen.</string>
+
+    <!-- Mystères du Rosaire -->
+    <string name="prayer_mysteries_joyful">Mystères Joyeux:\n
+\n
+(Lundi et samedi)\n
+\n
+1. L\'Annonciation\n
+2. La Visitation\n
+3. La Nativité\n
+4. La Présentation au Temple\n
+5. Le Recouvrement au Temple</string>
+
+    <string name="prayer_mysteries_sorrowful">Mystères Douloureux:\n
+\n
+(Mardi et vendredi)\n
+\n
+1. L\'Agonie de Jésus\n
+2. La Flagellation\n
+3. Le Couronnement d\'épines\n
+4. Le Portement de la Croix\n
+5. La Crucifixion</string>
+
+    <string name="prayer_mysteries_glorious">Mystères Glorieux:\n
+\n
+(Mercredi et dimanche)\n
+\n
+1. La Résurrection\n
+2. L\'Ascension\n
+3. La Pentecôte\n
+4. L\'Assomption de Marie\n
+5. Le Couronnement de Marie</string>
+
+    <string name="prayer_mysteries_luminous">Mystères Lumineux:\n
+\n
+(Jeudi)\n
+\n
+1. Le Baptême de Jésus\n
+2. Les Noces de Cana\n
+3. L\'Annonce du Royaume\n
+4. La Transfiguration\n
+5. L\'Institution de l\'Eucharistie</string>
+
+    <!-- Prières Situationnelles -->
+    <string name="prayer_act_of_contrition">Acte de Contrition:\n
+\n
+Mon Dieu,
+j\'ai un très grand regret de vous avoir offensé
+parce que vous êtes infiniment bon,
+infiniment aimable,\n
+\n
+et que le péché vous déplaît.
+Je prends la ferme résolution,
+avec le secours de votre sainte grâce,
+de ne plus vous offenser
+et de faire pénitence.\n
+\n
+Amen.</string>
+
+    <string name="prayer_magnificat">Magnificat:\n
+\n
+Mon âme exalte le Seigneur,
+exulte mon esprit en Dieu, mon Sauveur!\n
+\n
+Il s\'est penché sur son humble servante;
+désormais, tous les âges me diront bienheureuse.
+Le Puissant fit pour moi des merveilles;
+Saint est son nom!\n
+\n
+Sa miséricorde s\'étend d\'âge en âge
+sur ceux qui le craignent.
+Déployant la force de son bras,
+il disperse les superbes.\n
+\n
+Il renverse les puissants de leurs trônes,
+il élève les humbles.
+Il comble de biens les affamés,
+renvoie les riches les mains vides.\n
+\n
+Il relève Israël, son serviteur,
+il se souvient de son amour,
+de la promesse faite à nos pères,
+en faveur d\'Abraham et de sa race, à jamais.\n
+\n
+Amen.</string>
+
+    <string name="prayer_serenity">Prière de la Sérénité:\n
+\n
+Mon Dieu, donnez-moi la sérénité
+d\'accepter les choses que je ne puis changer,
+le courage de changer les choses que je peux,
+et la sagesse d\'en connaître la différence.\n
+\n
+Vivant un jour à la fois,
+profitant d\'un moment à la fois,
+acceptant les difficultés
+comme le chemin vers la paix.\n
+\n
+Prenant, comme Il l\'a fait,
+ce monde pécheur tel qu\'il est,
+et non comme je voudrais qu\'il soit.
+Faisant confiance à Sa volonté
+pour remettre toute chose en ordre.\n
+\n
+Amen.</string>
+
+    <string name="prayer_psalm_23">Psaume 23 (Le Seigneur est mon berger):\n
+\n
+Le Seigneur est mon berger,
+je ne manque de rien.
+Sur des prés d\'herbe fraîche,
+il me fait reposer.\n
+\n
+Il me mène vers les eaux tranquilles
+et me fait revivre;
+il me conduit par le juste chemin
+pour l\'honneur de son nom.\n
+\n
+Si je traverse les ravins de la mort,
+je ne crains aucun mal,
+car tu es avec moi:
+ton bâton me guide et me rassure.\n
+\n
+Tu prépares la table pour moi
+devant mes ennemis;
+tu répands le parfum sur ma tête,
+ma coupe est débordante.\n
+\n
+Grâce et bonheur m\'accompagnent
+tous les jours de ma vie;
+j\'habiterai la maison du Seigneur
+pour la durée de mes jours.\n
+\n
+Amen.</string>
+
+    <string name="prayer_san_miguel">Prière à Saint Michel:\n
+\n
+Saint Michel Archange,
+défendez-nous dans le combat;
+soyez notre secours
+contre la malice et les embûches du démon.\n
+\n
+Que Dieu lui fasse sentir son empire,
+nous vous en supplions.
+Et vous, Prince de la Milice céleste,
+précipitez en enfer, par la force divine,
+Satan et les autres esprits mauvais
+qui rôdent dans le monde
+pour la perte des âmes.\n
+\n
+Amen.</string>
+
+    <!-- Prières Quotidiennes -->
+    <string name="prayer_morning">Prière du Matin:\n
+\n
+Seigneur, dans le silence de ce jour naissant,
+je viens vous demander la paix, la sagesse et la force.\n
+\n
+Je veux regarder aujourd\'hui le monde
+avec des yeux remplis d\'amour;
+être patient, compréhensif, doux et sage;
+voir vos enfants comme vous les voyez,
+et ainsi ne voir que le bien en chacun.\n
+\n
+Fermez mes oreilles à toute calomnie,
+gardez ma langue de toute malveillance.
+Que seules les pensées qui bénissent
+demeurent dans mon esprit.\n
+\n
+Que je sois si bienveillant et si joyeux
+que tous ceux qui m\'approchent sentent votre présence.
+Revêtez-moi de votre beauté, Seigneur,
+et qu\'au long de ce jour je vous révèle.\n
+\n
+Amen.</string>
+
+    <string name="prayer_angelus">L\'Angélus:\n
+\n
+V. L\'Ange du Seigneur porta l\'annonce à Marie.\n
+R. Et elle conçut du Saint-Esprit.\n
+    Je vous salue Marie...\n
+\n
+V. Voici la Servante du Seigneur.\n
+R. Qu\'il me soit fait selon votre parole.\n
+    Je vous salue Marie...\n
+\n
+V. Et le Verbe s\'est fait chair.\n
+R. Et il a habité parmi nous.\n
+    Je vous salue Marie...\n
+\n
+V. Priez pour nous, sainte Mère de Dieu.\n
+R. Afin que nous soyons rendus dignes des promesses du Christ.\n
+\n
+Prions:\n
+Que ta grâce, Seigneur notre Père,
+se répande en nos cœurs;
+par le message de l\'Ange,
+tu nous as fait connaître l\'Incarnation de ton Fils bien-aimé,
+conduis-nous, par sa passion et par sa croix,
+jusqu\'à la gloire de la résurrection.
+Par le Christ, notre Seigneur.\n
+\n
+Amen.</string>
+
+    <string name="prayer_night">Prière du Soir:\n
+\n
+Merci, Seigneur, pour cette journée qui s\'achève,
+pour tes bénédictions et ta protection.
+Pardonne mes fautes et mes erreurs.
+Je t\'offre mon repos et mon sommeil.\n
+\n
+Protège ma famille et tous mes proches.
+Donne du réconfort à ceux qui souffrent,
+de l\'espoir à ceux qui doutent,
+et ta paix à tous les cœurs.\n
+\n
+Sous l\'abri de ta miséricorde,
+nous nous réfugions, Sainte Mère de Dieu.
+Ne méprise pas nos prières
+quand nous sommes dans l\'épreuve,
+mais délivre-nous de tout danger,
+Vierge glorieuse et bénie.\n
+\n
+Amen.</string>
+
+    <string name="prayer_examination">Examen de Conscience:\n
+\n
+1. Action de grâce:\n
+Merci, Seigneur, pour les dons reçus aujourd\'hui...\n
+\n
+2. Demande de lumière:\n
+Esprit Saint, aide-moi à voir clairement...\n
+\n
+3. Examen:\n
+- Comment ai-je agi envers Dieu aujourd\'hui?\n
+- Comment ai-je traité les autres?\n
+- Quel bien ai-je omis de faire?\n
+- Qu\'aurais-je pu faire de mieux?\n
+\n
+4. Contrition:\n
+Pardonne-moi, Seigneur, mes fautes...\n
+\n
+5. Résolution:\n
+Demain, avec ton aide, je m\'efforcerai...\n
+\n
+Notre Père...\n
+\n
+Amen.</string>
+
+    <!-- Dévotions Populaires -->
+    <string name="prayer_rosary">Le Saint Rosaire:\n
+\n
+Comment le prier:\n
+\n
+1. Faire le signe de la croix\n
+2. Réciter le Je crois en Dieu\n
+3. Dire le Notre Père\n
+4. Dire trois Je vous salue Marie\n
+5. Dire le Gloire au Père\n
+6. Annoncer le premier mystère\n
+7. Dire le Notre Père\n
+8. Dire dix Je vous salue Marie\n
+9. Dire le Gloire au Père et la prière de Fatima\n
+10. Continuer avec les mystères suivants\n
+\n
+Pour terminer:\n
+- Dire le Salve Regina\n
+- Litanies (facultatif)\n
+- Prière finale</string>
+
+    <string name="prayer_divine_mercy">Chapelet de la Divine Miséricorde:\n
+\n
+À réciter avec un chapelet ordinaire:\n
+\n
+1. Notre Père\n
+2. Je vous salue Marie\n
+3. Je crois en Dieu\n
+\n
+Sur les gros grains:\n
+"Père Éternel, je T\'offre le Corps et le Sang,
+l\'Âme et la Divinité de Ton Fils bien-aimé,
+Notre Seigneur Jésus-Christ,
+en réparation de nos péchés
+et de ceux du monde entier."\n
+\n
+Sur les petits grains:\n
+"Par Sa douloureuse Passion,
+sois miséricordieux pour nous
+et pour le monde entier."\n
+\n
+Pour terminer (trois fois):\n
+"Dieu Saint, Dieu Fort, Dieu Éternel,
+prends pitié de nous et du monde entier."</string>
+
+    <string name="prayer_via_crucis">Chemin de Croix:\n
+\n
+Les 14 Stations:\n
+\n
+1. Jésus est condamné à mort\n
+2. Jésus est chargé de sa croix\n
+3. Jésus tombe pour la première fois\n
+4. Jésus rencontre sa Mère\n
+5. Simon de Cyrène aide Jésus\n
+6. Véronique essuie le visage de Jésus\n
+7. Jésus tombe pour la deuxième fois\n
+8. Jésus console les femmes de Jérusalem\n
+9. Jésus tombe pour la troisième fois\n
+10. Jésus est dépouillé de ses vêtements\n
+11. Jésus est cloué sur la croix\n
+12. Jésus meurt sur la croix\n
+13. Jésus est descendu de la croix\n
+14. Jésus est mis au tombeau\n
+\n
+À chaque station:\n
+- Annoncer la station\n
+- Méditer sur le moment\n
+- Dire un Notre Père, Je vous salue Marie et Gloire au Père</string>
+
+    <string name="prayer_psalm_51">Psaume 51 (Miserere):\n
+\n
+Pitié pour moi, mon Dieu, dans ton amour,
+selon ta grande miséricorde, efface mon péché.
+Lave-moi tout entier de ma faute,
+purifie-moi de mon offense.\n
+\n
+Oui, je connais mon péché,
+ma faute est toujours devant moi.
+Contre toi, et toi seul, j\'ai péché,
+ce qui est mal à tes yeux, je l\'ai fait.\n
+\n
+Crée en moi un cœur pur, ô mon Dieu,
+renouvelle et raffermis au fond de moi mon esprit.
+Ne me chasse pas loin de ta face,
+ne me reprends pas ton esprit saint.\n
+\n
+Le sacrifice qui plaît à Dieu, c\'est un esprit brisé;
+tu ne repousses pas, ô mon Dieu,
+un cœur brisé et broyé.\n
+\n
+Amen.</string>
+
+    <string name="prayer_te_deum">Te Deum:\n
+\n
+À toi, Dieu, notre louange!
+Nous t\'acclamons: tu es Seigneur!
+À toi, Père éternel,
+l\'hymne de l\'univers.\n
+\n
+Devant toi se prosternent les archanges,
+les anges et les esprits des cieux;
+ils te rendent grâce;
+ils adorent et ils chantent:\n
+\n
+Saint, Saint, Saint, le Seigneur,
+Dieu de l\'univers;
+le ciel et la terre sont remplis
+de ta gloire.\n
+\n
+C\'est toi que les Apôtres glorifient,
+toi que proclament les prophètes,
+toi dont témoignent les martyrs;
+c\'est toi que par le monde entier
+l\'Église annonce et reconnaît.\n
+\n
+Amen.</string>
+</resources> 

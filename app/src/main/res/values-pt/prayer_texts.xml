@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Orações Principais -->
+    <string name="prayer_padre_nuestro">Pai Nosso:\n
+\n
+Pai Nosso que estais nos céus,
+santificado seja o vosso nome,\n
+\n
+venha a nós o vosso reino,
+seja feita a vossa vontade
+assim na terra como no céu.\n
+\n
+O pão nosso de cada dia nos dai hoje,
+perdoai-nos as nossas ofensas,
+assim como nós perdoamos
+a quem nos tem ofendido,\n
+\n
+e não nos deixeis cair em tentação,
+mas livrai-nos do mal.\n
+\n
+Amém.</string>
+
+    <string name="prayer_ave_maria">Ave Maria:\n
+\n
+Ave Maria, cheia de graça,
+o Senhor é convosco.\n
+\n
+Bendita sois vós entre as mulheres,
+e bendito é o fruto do vosso ventre, Jesus.\n
+\n
+Santa Maria, Mãe de Deus,
+rogai por nós, pecadores,
+agora e na hora da nossa morte.\n
+\n
+Amém.</string>
+
+    <string name="prayer_gloria">Glória:\n
+\n
+Glória ao Pai,
+ao Filho,
+e ao Espírito Santo.\n
+\n
+Como era no princípio,
+agora e sempre,
+pelos séculos dos séculos.\n
+\n
+Amém.</string>
+
+    <string name="prayer_salve_regina">Salve Rainha:\n
+\n
+Salve Rainha, Mãe de misericórdia,
+vida, doçura e esperança nossa, salve!\n
+\n
+A vós bradamos, os degredados filhos de Eva.
+A vós suspiramos, gemendo e chorando
+neste vale de lágrimas.\n
+\n
+Eia, pois, advogada nossa,
+esses vossos olhos misericordiosos a nós volvei.
+E depois deste desterro mostrai-nos Jesus,
+bendito fruto do vosso ventre.\n
+\n
+Ó clemente, ó piedosa, ó doce Virgem Maria!
+Rogai por nós, Santa Mãe de Deus,
+para que sejamos dignos das promessas de Cristo.\n
+\n
+Amém.</string>
+
+    <string name="prayer_fatima">Oração de Fátima:\n
+\n
+Ó meu Jesus,
+perdoai-nos e livrai-nos do fogo do inferno,
+levai as almas todas para o céu,\n
+\n
+principalmente aquelas
+que mais precisarem
+da vossa misericórdia.\n
+\n
+Amém.</string>
+
+    <!-- Mistérios do Rosário -->
+    <string name="prayer_mysteries_joyful">Mistérios Gozosos:\n
+\n
+(Segunda-feira e sábado)\n
+\n
+1. A Anunciação do Anjo a Nossa Senhora\n
+2. A Visitação de Nossa Senhora a Santa Isabel\n
+3. O Nascimento de Jesus\n
+4. A Apresentação do Menino Jesus no Templo\n
+5. O Encontro do Menino Jesus no Templo</string>
+
+    <string name="prayer_mysteries_sorrowful">Mistérios Dolorosos:\n
+\n
+(Terça-feira e sexta-feira)\n
+\n
+1. A Agonia de Jesus no Horto\n
+2. A Flagelação de Jesus\n
+3. A Coroação de Espinhos\n
+4. Jesus carrega a Cruz\n
+5. A Crucificação de Jesus</string>
+
+    <string name="prayer_mysteries_glorious">Mistérios Gloriosos:\n
+\n
+(Quarta-feira e domingo)\n
+\n
+1. A Ressurreição de Jesus\n
+2. A Ascensão de Jesus ao Céu\n
+3. A Vinda do Espírito Santo\n
+4. A Assunção de Nossa Senhora\n
+5. A Coroação de Nossa Senhora</string>
+
+    <string name="prayer_mysteries_luminous">Mistérios Luminosos:\n
+\n
+(Quinta-feira)\n
+\n
+1. O Batismo de Jesus no Jordão\n
+2. As Bodas de Caná\n
+3. O Anúncio do Reino de Deus\n
+4. A Transfiguração de Jesus\n
+5. A Instituição da Eucaristia</string>
+
+    <!-- Orações Situacionais -->
+    <string name="prayer_act_of_contrition">Ato de Contrição:\n
+\n
+Senhor meu Jesus Cristo,
+Deus e homem verdadeiro,
+Criador e Redentor meu,\n
+\n
+por serdes Vós quem sois,
+sumamente bom e digno de ser amado sobre todas as coisas,
+e porque Vos amo e estimo,
+pesa-me de todo o coração de Vos ter ofendido.\n
+\n
+Pesa-me também porque podeis castigar-me
+com as penas do inferno.
+Ajudado com vossa divina graça,
+proponho firmemente nunca mais Vos tornar a ofender
+e confiar na vossa misericórdia.\n
+\n
+Amém.</string>
+
+    <string name="prayer_magnificat">Magnificat:\n
+\n
+A minha alma glorifica o Senhor
+e o meu espírito se alegra em Deus, meu Salvador.\n
+\n
+Porque pôs os olhos na humildade da sua serva.
+De hoje em diante me chamarão bem-aventurada
+todas as gerações.
+O Todo-Poderoso fez em mim maravilhas:
+Santo é o seu nome.\n
+\n
+A sua misericórdia se estende de geração em geração
+sobre aqueles que O temem.
+Manifestou o poder do seu braço
+e dispersou os soberbos.\n
+\n
+Derrubou os poderosos de seus tronos
+e exaltou os humildes.
+Aos famintos encheu de bens
+e aos ricos despediu de mãos vazias.\n
+\n
+Acolheu a Israel, seu servo,
+lembrado da sua misericórdia,
+como tinha prometido a nossos pais,
+a Abraão e à sua descendência para sempre.\n
+\n
+Amém.</string>
+
+    <string name="prayer_serenity">Oração da Serenidade:\n
+\n
+Concedei-me, Senhor,
+a serenidade necessária para aceitar as coisas
+que não posso modificar,
+coragem para modificar aquelas que posso
+e sabedoria para distinguir umas das outras.\n
+\n
+Vivendo um dia de cada vez,
+apreciando um momento de cada vez,
+aceitando as dificuldades
+como um caminho para a paz.\n
+\n
+Aceitando, como Jesus fez,
+este mundo pecador como ele é,
+e não como eu gostaria que fosse,
+confiando que Vós fareis tudo dar certo
+se eu me entregar à Vossa vontade.\n
+\n
+Amém.</string>
+
+    <string name="prayer_psalm_23">Salmo 23 (O Senhor é meu pastor):\n
+\n
+O Senhor é meu pastor, nada me faltará.
+Em verdes prados me faz repousar;
+conduz-me junto às águas refrescantes,
+restaura as forças de minha alma.\n
+\n
+Pelos caminhos retos ele me leva,
+por amor do seu nome.
+Ainda que eu atravesse o vale escuro,
+nada temerei, pois estais comigo.
+Vosso bordão e vosso báculo
+são o meu amparo.\n
+\n
+Preparais para mim a mesa
+à vista de meus inimigos.
+Com óleo ungis minha cabeça;
+o meu cálice transborda.\n
+\n
+Felicidade e amor me seguirão
+todos os dias de minha vida;
+e habitarei na casa do Senhor
+por longos dias.\n
+\n
+Amém.</string>
+
+    <string name="prayer_san_miguel">Oração a São Miguel:\n
+\n
+São Miguel Arcanjo,
+defendei-nos no combate,
+sede o nosso refúgio
+contra as maldades e ciladas do demônio.\n
+\n
+Ordene-lhe Deus, instantemente o pedimos,
+e vós, príncipe da milícia celeste,
+pela virtude divina,
+precipitai no inferno a Satanás
+e aos outros espíritos malignos,
+que andam pelo mundo
+para perder as almas.\n
+\n
+Amém.</string>
+
+    <!-- Orações Diárias -->
+    <string name="prayer_morning">Oração da Manhã:\n
+\n
+Senhor, no silêncio deste dia que amanhece,
+venho pedir-vos paz, sabedoria e força.\n
+\n
+Hoje quero olhar o mundo
+com olhos cheios de amor;
+ser paciente, compreensivo, manso e prudente;
+ver além das aparências vossos filhos,
+como Vós mesmo os vedes,
+e assim ver só o bem em cada um.\n
+\n
+Fechai meus ouvidos a toda calúnia,
+guardai minha língua de toda maldade.
+Que só de bênçãos se encha meu espírito.\n
+\n
+Que eu seja tão bondoso e alegre,
+que todos quantos se aproximarem de mim
+sintam vossa presença.
+Revesti-me de vossa beleza, Senhor,
+e que no decurso deste dia eu vos revele.\n
+\n
+Amém.</string>
+
+    <string name="prayer_angelus">Angelus:\n
+\n
+V. O Anjo do Senhor anunciou a Maria.\n
+R. E ela concebeu do Espírito Santo.\n
+    Ave Maria...\n
+\n
+V. Eis aqui a serva do Senhor.\n
+R. Faça-se em mim segundo a vossa palavra.\n
+    Ave Maria...\n
+\n
+V. E o Verbo se fez carne.\n
+R. E habitou entre nós.\n
+    Ave Maria...\n
+\n
+V. Rogai por nós, Santa Mãe de Deus.\n
+R. Para que sejamos dignos das promessas de Cristo.\n
+\n
+Oremos:\n
+Infundi, Senhor, nós vos pedimos,
+a vossa graça em nossas almas,
+para que nós, que pela anunciação do Anjo
+conhecemos a encarnação de Cristo, vosso Filho,
+pela sua paixão e morte na cruz
+sejamos conduzidos à glória da ressurreição.
+Por Cristo, nosso Senhor.\n
+\n
+Amém.</string>
+
+    <string name="prayer_night">Oração da Noite:\n
+\n
+Obrigado, Senhor, por este dia que termina,
+por vossas bênçãos e proteção.
+Perdoai minhas faltas e erros.
+Ofereço-vos meu descanso e meu sono.\n
+\n
+Protegei minha família e todos os meus entes queridos.
+Dai conforto aos que sofrem,
+esperança aos que duvidam,
+e vossa paz a todos os corações.\n
+\n
+Sob a vossa proteção nos refugiamos,
+Santa Mãe de Deus.
+Não desprezeis as nossas súplicas
+em nossas necessidades,
+mas livrai-nos sempre de todos os perigos,
+ó Virgem gloriosa e bendita.\n
+\n
+Amém.</string>
+
+    <string name="prayer_examination">Exame de Consciência:\n
+\n
+1. Ação de graças:\n
+Obrigado, Senhor, pelos dons recebidos hoje...\n
+\n
+2. Pedido de luz:\n
+Espírito Santo, ajudai-me a ver claramente...\n
+\n
+3. Exame:\n
+- Como agi com Deus hoje?\n
+- Como tratei os outros?\n
+- Que bem deixei de fazer?\n
+- O que poderia ter feito melhor?\n
+\n
+4. Contrição:\n
+Perdoai-me, Senhor, por minhas faltas...\n
+\n
+5. Propósito:\n
+Amanhã, com vossa ajuda, procurarei...\n
+\n
+Pai Nosso...\n
+\n
+Amém.</string>
+
+    <!-- Devoções Populares -->
+    <string name="prayer_rosary">O Santo Rosário:\n
+\n
+Como rezar:\n
+\n
+1. Fazer o Sinal da Cruz\n
+2. Rezar o Credo\n
+3. Rezar o Pai Nosso\n
+4. Rezar três Ave Marias\n
+5. Rezar o Glória\n
+6. Anunciar o primeiro Mistério\n
+7. Rezar o Pai Nosso\n
+8. Rezar dez Ave Marias\n
+9. Rezar o Glória e a Oração de Fátima\n
+10. Continuar com os Mistérios seguintes\n
+\n
+Para concluir:\n
+- Rezar a Salve Rainha\n
+- Ladainha (opcional)\n
+- Oração final</string>
+
+    <string name="prayer_divine_mercy">Terço da Divina Misericórdia:\n
+\n
+Usando um terço comum:\n
+\n
+1. Pai Nosso\n
+2. Ave Maria\n
+3. Credo\n
+\n
+Nas contas grandes:\n
+"Eterno Pai, eu Vos ofereço o Corpo e Sangue,
+Alma e Divindade de Vosso Diletíssimo Filho,
+Nosso Senhor Jesus Cristo,
+em expiação dos nossos pecados
+e dos do mundo inteiro."\n
+\n
+Nas contas pequenas:\n
+"Pela Sua dolorosa Paixão,
+tende misericórdia de nós
+e do mundo inteiro."\n
+\n
+Para terminar (três vezes):\n
+"Deus Santo, Deus Forte, Deus Imortal,
+tende piedade de nós e do mundo inteiro."</string>
+
+    <string name="prayer_via_crucis">Via Sacra:\n
+\n
+As 14 Estações:\n
+\n
+1. Jesus é condenado à morte\n
+2. Jesus carrega a cruz\n
+3. Jesus cai pela primeira vez\n
+4. Jesus encontra sua Mãe\n
+5. Simão Cireneu ajuda Jesus\n
+6. Verônica enxuga o rosto de Jesus\n
+7. Jesus cai pela segunda vez\n
+8. Jesus consola as mulheres\n
+9. Jesus cai pela terceira vez\n
+10. Jesus é despojado de suas vestes\n
+11. Jesus é pregado na cruz\n
+12. Jesus morre na cruz\n
+13. Jesus é descido da cruz\n
+14. Jesus é sepultado\n
+\n
+Em cada estação:\n
+- Anunciar a estação\n
+- Meditar sobre o momento\n
+- Rezar um Pai Nosso, Ave Maria e Glória</string>
+</resources> 

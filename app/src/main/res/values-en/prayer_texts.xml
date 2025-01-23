@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Main Prayers -->
+    <string name="prayer_padre_nuestro">Our Father:\n
+\n
+Our Father, who art in heaven,
+hallowed be thy name;\n
+\n
+thy kingdom come;
+thy will be done
+on earth as it is in heaven.\n
+\n
+Give us this day our daily bread;
+and forgive us our trespasses
+as we forgive those
+who trespass against us;\n
+\n
+and lead us not into temptation,
+but deliver us from evil.\n
+\n
+Amen.</string>
+
+    <string name="prayer_ave_maria">Hail Mary:\n
+\n
+Hail Mary, full of grace,
+the Lord is with thee.\n
+\n
+Blessed art thou among women,
+and blessed is the fruit
+of thy womb, Jesus.\n
+\n
+Holy Mary, Mother of God,
+pray for us sinners,
+now and at the hour of our death.\n
+\n
+Amen.</string>
+
+    <string name="prayer_gloria">Glory Be:\n
+\n
+Glory be to the Father,
+and to the Son,
+and to the Holy Spirit.\n
+\n
+As it was in the beginning,
+is now, and ever shall be,
+world without end.\n
+\n
+Amen.</string>
+
+    <string name="prayer_salve_regina">Hail Holy Queen:\n
+\n
+Hail, Holy Queen, Mother of Mercy,
+our life, our sweetness and our hope.
+To thee do we cry.\n
+\n
+Poor banished children of Eve,
+to thee do we send up our sighs,
+mourning and weeping in this valley of tears.\n
+\n
+Turn then, most gracious advocate,
+thine eyes of mercy toward us,
+and after this our exile,
+show unto us the blessed fruit of thy womb, Jesus.\n
+\n
+O clement, O loving, O sweet Virgin Mary!
+Pray for us, O Holy Mother of God,
+that we may be made worthy of the promises of Christ.\n
+\n
+Amen.</string>
+
+    <string name="prayer_fatima">Fatima Prayer:\n
+\n
+O my Jesus,
+forgive us our sins,
+save us from the fires of hell.\n
+\n
+Lead all souls to Heaven,
+especially those who are
+in most need of your mercy.\n
+\n
+Amen.</string>
+
+    <!-- Rosary Mysteries -->
+    <string name="prayer_mysteries_joyful">Joyful Mysteries:\n
+\n
+(Monday and Saturday)\n
+\n
+1. The Annunciation\n
+2. The Visitation\n
+3. The Nativity\n
+4. The Presentation\n
+5. The Finding in the Temple</string>
+
+    <string name="prayer_mysteries_sorrowful">Sorrowful Mysteries:\n
+\n
+(Tuesday and Friday)\n
+\n
+1. The Agony in the Garden\n
+2. The Scourging at the Pillar\n
+3. The Crowning with Thorns\n
+4. The Carrying of the Cross\n
+5. The Crucifixion</string>
+
+    <string name="prayer_mysteries_glorious">Glorious Mysteries:\n
+\n
+(Wednesday and Sunday)\n
+\n
+1. The Resurrection\n
+2. The Ascension\n
+3. The Descent of the Holy Spirit\n
+4. The Assumption\n
+5. The Coronation of Mary</string>
+
+    <string name="prayer_mysteries_luminous">Luminous Mysteries:\n
+\n
+(Thursday)\n
+\n
+1. The Baptism of Christ in the Jordan\n
+2. The Wedding Feast at Cana\n
+3. The Proclamation of the Kingdom\n
+4. The Transfiguration\n
+5. The Institution of the Eucharist</string>
+
+    <!-- Situational Prayers -->
+    <string name="prayer_act_of_contrition">Act of Contrition:\n
+\n
+O my God,
+I am heartily sorry for having offended Thee,
+and I detest all my sins because of thy just punishments.\n
+\n
+But most of all because they offend Thee, my God,
+Who art all good and deserving of all my love.
+I firmly resolve with the help of Thy grace
+to sin no more and to avoid the near occasion of sin.\n
+\n
+Amen.</string>
+
+    <string name="prayer_magnificat">Magnificat:\n
+\n
+My soul proclaims the greatness of the Lord,
+my spirit rejoices in God my Savior,
+for he has looked with favor on his lowly servant.\n
+\n
+From this day all generations will call me blessed:
+the Almighty has done great things for me,
+and holy is his Name.
+He has mercy on those who fear him
+in every generation.\n
+\n
+He has shown the strength of his arm,
+he has scattered the proud in their conceit.
+He has cast down the mighty from their thrones,
+and has lifted up the lowly.
+He has filled the hungry with good things,
+and the rich he has sent away empty.\n
+\n
+He has come to the help of his servant Israel
+for he has remembered his promise of mercy,
+the promise he made to our fathers,
+to Abraham and his children forever.\n
+\n
+Amen.</string>
+
+    <string name="prayer_serenity">Serenity Prayer:\n
+\n
+God, grant me the serenity
+to accept the things I cannot change,
+courage to change the things I can,
+and wisdom to know the difference.\n
+\n
+Living one day at a time,
+enjoying one moment at a time,
+accepting hardship as a pathway to peace.\n
+\n
+Taking, as Jesus did,
+this sinful world as it is,
+not as I would have it.
+Trusting that You will make all things right,
+if I surrender to Your will.\n
+\n
+Amen.</string>
+
+    <string name="prayer_psalm_23">Psalm 23 (The Lord is my Shepherd):\n
+\n
+The Lord is my shepherd; I shall not want.
+He maketh me to lie down in green pastures:
+he leadeth me beside the still waters.
+He restoreth my soul.\n
+\n
+He leadeth me in the paths of righteousness
+for his name\'s sake.
+Yea, though I walk through the valley of the shadow of death,
+I will fear no evil: for thou art with me;
+thy rod and thy staff they comfort me.\n
+\n
+Thou preparest a table before me
+in the presence of mine enemies:
+thou anointest my head with oil;
+my cup runneth over.\n
+\n
+Surely goodness and mercy shall follow me
+all the days of my life:
+and I will dwell in the house of the Lord
+forever.\n
+\n
+Amen.</string>
+
+    <!-- Sacramental Prayers -->
+    <string name="prayer_baptism">Baptismal Prayer:\n
+\n
+Heavenly Father,
+we thank you for the gift of baptism,
+for the water that cleanses and gives life,
+for the Spirit that renews and strengthens,
+and for your Son Jesus Christ who calls us to new life.\n
+\n
+Grant that those who are baptized
+may die to sin and rise to new life;
+may be buried with Christ in his death,
+may share in his resurrection
+and walk in newness of life.\n
+\n
+Amen.</string>
+
+    <string name="prayer_communion">Communion Prayer:\n
+\n
+Lord Jesus Christ,
+I am not worthy that you should enter under my roof,
+but only say the word and my soul shall be healed.\n
+\n
+May the Body of Christ keep me safe for eternal life.
+May the Blood of Christ keep me safe for eternal life.\n
+\n
+I adore you with devotion, hidden God,
+truly present beneath these appearances.
+My heart submits to you completely,
+and surrenders itself totally in contemplating you.\n
+\n
+Amen.</string>
+
+    <string name="prayer_psalm_51">Psalm 51 (Miserere):\n
+\n
+Have mercy on me, O God,
+according to your unfailing love;
+according to your great compassion
+blot out my transgressions.\n
+\n
+Wash away all my iniquity
+and cleanse me from my sin.
+For I know my transgressions,
+and my sin is always before me.\n
+\n
+Create in me a pure heart, O God,
+and renew a steadfast spirit within me.
+Do not cast me from your presence
+or take your Holy Spirit from me.\n
+\n
+The sacrifices of God are a broken spirit;
+a broken and contrite heart,
+O God, you will not despise.\n
+\n
+Amen.</string>
+
+    <string name="prayer_san_miguel">Prayer to Saint Michael:\n
+\n
+Saint Michael the Archangel,
+defend us in battle.
+Be our protection against the wickedness
+and snares of the devil.\n
+\n
+May God rebuke him, we humbly pray;
+and do thou, O Prince of the Heavenly Host,
+by the Divine Power of God,
+cast into hell Satan and all evil spirits
+who wander through the world
+seeking the ruin of souls.\n
+\n
+Amen.</string>
+
+    <string name="prayer_psalm_91">Psalm 91 (Protection):\n
+\n
+Whoever dwells in the shelter of the Most High
+will rest in the shadow of the Almighty.
+I will say of the Lord, "He is my refuge and my fortress,
+my God, in whom I trust."\n
+\n
+He will save you from the fowler\'s snare
+and from the deadly pestilence.
+He will cover you with his feathers,
+and under his wings you will find refuge;
+his faithfulness will be your shield and rampart.\n
+\n
+You will not fear the terror of night,
+nor the arrow that flies by day,
+nor the pestilence that stalks in the darkness,
+nor the plague that destroys at midday.\n
+\n
+For he will command his angels concerning you
+to guard you in all your ways.\n
+\n
+Amen.</string>
+
+    <string name="prayer_te_deum">Te Deum:\n
+\n
+We praise thee, O God:
+we acknowledge thee to be the Lord.
+All the earth doth worship thee,
+the Father everlasting.\n
+\n
+To thee all Angels cry aloud:
+the Heavens and all the powers therein.
+To thee Cherubim and Seraphim
+continually do cry:\n
+\n
+Holy, Holy, Holy:
+Lord God of Hosts.
+Heaven and earth are full
+of the Majesty of thy Glory.\n
+\n
+The glorious company of the Apostles praise thee.
+The goodly fellowship of the Prophets praise thee.
+The noble army of Martyrs praise thee.\n
+\n
+The holy Church throughout all the world
+doth acknowledge thee:
+The Father of an infinite Majesty.\n
+\n
+Amen.</string>
+
+    <!-- Daily Prayers -->
+    <string name="prayer_morning">Morning Prayer:\n
+\n
+Lord, in the silence of this dawning day,
+I come to ask for peace, wisdom, and strength.\n
+\n
+Today, I wish to look at the world with eyes full of love;
+to be patient, understanding, humble, gentle, and good.
+To see beyond appearances, your children as you see them,
+and thus to see the goodness in everyone.\n
+\n
+Close my ears to all calumny;
+guard my tongue from all malice.
+Let only thoughts that bless
+remain in my mind.\n
+\n
+Let me be so well-intentioned and just,
+that all who come in contact with me
+may feel your presence.
+Clothe me in your goodness, Lord,
+and let me throughout this day reveal you.\n
+\n
+Amen.</string>
+
+    <string name="prayer_angelus">The Angelus:\n
+\n
+V. The Angel of the Lord declared unto Mary.\n
+R. And she conceived of the Holy Spirit.\n
+    Hail Mary...\n
+\n
+V. Behold the handmaid of the Lord.\n
+R. Be it done unto me according to thy word.\n
+    Hail Mary...\n
+\n
+V. And the Word was made Flesh.\n
+R. And dwelt among us.\n
+    Hail Mary...\n
+\n
+V. Pray for us, O Holy Mother of God.\n
+R. That we may be made worthy of the promises of Christ.\n
+\n
+Let us pray:\n
+Pour forth, we beseech Thee, O Lord,
+Thy grace into our hearts;
+that we, to whom the incarnation of Christ, Thy Son,
+was made known by the message of an angel,
+may by His Passion and Cross
+be brought to the glory of His Resurrection.
+Through the same Christ our Lord.\n
+\n
+Amen.</string>
+
+    <string name="prayer_night">Night Prayer:\n
+\n
+Thank you, Lord, for this day that ends,
+for your blessings and protection.
+Forgive my faults and errors.
+I offer you my rest and sleep.\n
+\n
+Protect my family and all my loved ones.
+Give comfort to those who suffer,
+hope to those who doubt,
+and your peace to all hearts.\n
+\n
+We fly to thy protection,
+O Holy Mother of God;
+despise not our petitions
+in our necessities,
+but deliver us always
+from all dangers,
+O glorious and blessed Virgin.\n
+\n
+Amen.</string>
+
+    <string name="prayer_examination">Examination of Conscience:\n
+\n
+1. Thanksgiving:\n
+Thank you, Lord, for the gifts received today...\n
+\n
+2. Prayer for Light:\n
+Holy Spirit, help me to see clearly...\n
+\n
+3. Examination:\n
+- How have I acted toward God today?\n
+- How have I treated others?\n
+- What good have I failed to do?\n
+- What could I have done better?\n
+\n
+4. Contrition:\n
+Forgive me, Lord, for my faults...\n
+\n
+5. Resolution:\n
+Tomorrow, with your help, I will try...\n
+\n
+Our Father...\n
+\n
+Amen.</string>
+
+    <!-- Popular Devotions -->
+    <string name="prayer_rosary">The Holy Rosary:\n
+\n
+How to pray:\n
+\n
+1. Make the Sign of the Cross\n
+2. Say the Apostles\' Creed\n
+3. Say the Our Father\n
+4. Say three Hail Marys\n
+5. Say the Glory Be\n
+6. Announce the first Mystery\n
+7. Say the Our Father\n
+8. Say ten Hail Marys\n
+9. Say the Glory Be and the Fatima Prayer\n
+10. Continue with the remaining Mysteries\n
+\n
+To conclude:\n
+- Say the Hail Holy Queen\n
+- Litany (optional)\n
+- Final Prayer</string>
+
+    <string name="prayer_divine_mercy">Divine Mercy Chaplet:\n
+\n
+Using a regular rosary:\n
+\n
+1. Our Father\n
+2. Hail Mary\n
+3. The Apostles\' Creed\n
+\n
+On the large beads:\n
+"Eternal Father, I offer You the Body and Blood,
+Soul and Divinity of Your dearly beloved Son,
+Our Lord Jesus Christ,
+in atonement for our sins
+and those of the whole world."\n
+\n
+On the small beads:\n
+"For the sake of His sorrowful Passion,
+have mercy on us and on the whole world."\n
+\n
+To conclude (three times):\n
+"Holy God, Holy Mighty One, Holy Immortal One,
+have mercy on us and on the whole world."</string>
+
+    <string name="prayer_via_crucis">Stations of the Cross:\n
+\n
+The 14 Stations:\n
+\n
+1. Jesus is condemned to death\n
+2. Jesus carries His cross\n
+3. Jesus falls the first time\n
+4. Jesus meets His Mother\n
+5. Simon helps Jesus carry the cross\n
+6. Veronica wipes the face of Jesus\n
+7. Jesus falls the second time\n
+8. Jesus meets the women of Jerusalem\n
+9. Jesus falls the third time\n
+10. Jesus is stripped of His garments\n
+11. Jesus is nailed to the cross\n
+12. Jesus dies on the cross\n
+13. Jesus is taken down from the cross\n
+14. Jesus is laid in the tomb\n
+\n
+At each station:\n
+- Announce the station\n
+- Reflect on the moment\n
+- Say an Our Father, Hail Mary, and Glory Be</string>
+</resources> 
