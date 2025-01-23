@@ -55,4 +55,63 @@
 
     <string name="penance_format">Come penitenza, ti invito a pregare %1$s, meditando in particolare su %2$s.</string>
     <string name="commandment_reference">Questo peccato è contro il comandamento: %1$s</string>
+
+    <string name="prayer_guide">Guida alla Preghiera</string>
+    <string name="prayer_guide_button">Guida alla Preghiera</string>
+
+    <string-array name="prayer_categories">
+        <item>Preghiere Principali</item>
+        <item>Misteri del Rosario</item>
+        <item>Preghiere Situazionali</item>
+        <item>Preghiere Sacramentali</item>
+        <item>Devozioni Popolari</item>
+        <item>Preghiere Quotidiane</item>
+    </string-array>
+
+    <string-array name="main_prayers">
+        <item>Padre Nostro</item>
+        <item>Ave Maria</item>
+        <item>Gloria al Padre</item>
+        <item>Salve Regina</item>
+        <item>Preghiera di Fatima</item>
+    </string-array>
+
+    <string-array name="rosary_mysteries">
+        <item>Misteri Gaudiosi (lunedì e sabato)</item>
+        <item>Misteri Dolorosi (martedì e venerdì)</item>
+        <item>Misteri Gloriosi (mercoledì e domenica)</item>
+        <item>Misteri Luminosi (giovedì)</item>
+    </string-array>
+
+    <string-array name="situational_prayers">
+        <item>Atto di Contrizione</item>
+        <item>Salmo 51 (Miserere)</item>
+        <item>Preghiera a San Michele Arcangelo</item>
+        <item>Salmo 91 (Protezione)</item>
+        <item>Te Deum</item>
+        <item>Magnificat</item>
+        <item>Preghiera della Serenità</item>
+        <item>Salmo 23 (Il Signore è il mio pastore)</item>
+    </string-array>
+
+    <string-array name="sacramental_prayers">
+        <item>Preghiera del Battesimo</item>
+        <item>Preghiera della Comunione</item>
+        <item>Preghiera della Confessione</item>
+        <item>Benedizione Matrimoniale</item>
+    </string-array>
+
+    <string-array name="popular_devotions">
+        <item>Santo Rosario</item>
+        <item>Coroncina della Divina Misericordia</item>
+        <item>Via Crucis</item>
+        <item>Novene</item>
+    </string-array>
+
+    <string-array name="daily_prayers">
+        <item>Preghiera del Mattino</item>
+        <item>Angelus</item>
+        <item>Preghiera della Sera</item>
+        <item>Esame di Coscienza</item>
+    </string-array>
 </resources> 

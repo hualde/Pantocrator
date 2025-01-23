@@ -56,4 +56,63 @@
 
     <string name="penance_format">Como penitencia, te invito a rezar %1$s, meditando especialmente sobre %2$s.</string>
     <string name="commandment_reference">Este pecado va contra el mandamiento: %1$s</string>
+
+    <string name="prayer_guide">Guía de Oraciones</string>
+    <string name="prayer_guide_button">Guía de Oraciones</string>
+
+    <string-array name="prayer_categories">
+        <item>Oraciones Principales</item>
+        <item>Misterios del Rosario</item>
+        <item>Oraciones por Situaciones</item>
+        <item>Oraciones Sacramentales</item>
+        <item>Devociones Populares</item>
+        <item>Oraciones del Día</item>
+    </string-array>
+
+    <string-array name="main_prayers">
+        <item>Padre Nuestro</item>
+        <item>Ave María</item>
+        <item>Gloria</item>
+        <item>Salve Regina</item>
+        <item>Oración de Fátima</item>
+    </string-array>
+
+    <string-array name="rosary_mysteries">
+        <item>Misterios Gozosos (lunes y sábado)</item>
+        <item>Misterios Dolorosos (martes y viernes)</item>
+        <item>Misterios Gloriosos (miércoles y domingo)</item>
+        <item>Misterios Luminosos (jueves)</item>
+    </string-array>
+
+    <string-array name="situational_prayers">
+        <item>Acto de Contrición</item>
+        <item>Salmo 51 (Miserere)</item>
+        <item>Oración a San Miguel Arcángel</item>
+        <item>Salmo 91 (Protección)</item>
+        <item>Te Deum</item>
+        <item>Magníficat</item>
+        <item>Oración de la Serenidad</item>
+        <item>Salmo 23 (El Señor es mi Pastor)</item>
+    </string-array>
+
+    <string-array name="sacramental_prayers">
+        <item>Oración del Bautismo</item>
+        <item>Oración de la Comunión</item>
+        <item>Oración de la Confesión</item>
+        <item>Bendición Matrimonial</item>
+    </string-array>
+
+    <string-array name="popular_devotions">
+        <item>Santo Rosario</item>
+        <item>Coronilla de la Divina Misericordia</item>
+        <item>Vía Crucis</item>
+        <item>Novenas</item>
+    </string-array>
+
+    <string-array name="daily_prayers">
+        <item>Oración de la Mañana</item>
+        <item>Ángelus</item>
+        <item>Oración de la Noche</item>
+        <item>Examen de Conciencia</item>
+    </string-array>
 </resources>

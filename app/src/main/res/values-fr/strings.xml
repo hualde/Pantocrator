@@ -55,4 +55,63 @@
 
     <string name="penance_format">Comme pénitence, je vous invite à prier %1$s, en méditant particulièrement sur %2$s.</string>
     <string name="commandment_reference">Ce péché est contre le commandement : %1$s</string>
+
+    <string name="prayer_guide">Guide de Prières</string>
+    <string name="prayer_guide_button">Guide de Prières</string>
+
+    <string-array name="prayer_categories">
+        <item>Prières Principales</item>
+        <item>Mystères du Rosaire</item>
+        <item>Prières Situationnelles</item>
+        <item>Prières Sacramentelles</item>
+        <item>Dévotions Populaires</item>
+        <item>Prières Quotidiennes</item>
+    </string-array>
+
+    <string-array name="main_prayers">
+        <item>Notre Père</item>
+        <item>Je vous salue Marie</item>
+        <item>Gloire au Père</item>
+        <item>Salve Regina</item>
+        <item>Prière de Fatima</item>
+    </string-array>
+
+    <string-array name="rosary_mysteries">
+        <item>Mystères Joyeux (lundi et samedi)</item>
+        <item>Mystères Douloureux (mardi et vendredi)</item>
+        <item>Mystères Glorieux (mercredi et dimanche)</item>
+        <item>Mystères Lumineux (jeudi)</item>
+    </string-array>
+
+    <string-array name="situational_prayers">
+        <item>Acte de Contrition</item>
+        <item>Psaume 51 (Miserere)</item>
+        <item>Prière à Saint Michel Archange</item>
+        <item>Psaume 91 (Protection)</item>
+        <item>Te Deum</item>
+        <item>Magnificat</item>
+        <item>Prière de la Sérénité</item>
+        <item>Psaume 23 (Le Seigneur est mon berger)</item>
+    </string-array>
+
+    <string-array name="sacramental_prayers">
+        <item>Prière du Baptême</item>
+        <item>Prière de la Communion</item>
+        <item>Prière de la Confession</item>
+        <item>Bénédiction Nuptiale</item>
+    </string-array>
+
+    <string-array name="popular_devotions">
+        <item>Saint Rosaire</item>
+        <item>Chapelet de la Divine Miséricorde</item>
+        <item>Chemin de Croix</item>
+        <item>Neuvaines</item>
+    </string-array>
+
+    <string-array name="daily_prayers">
+        <item>Prière du Matin</item>
+        <item>Angélus</item>
+        <item>Prière du Soir</item>
+        <item>Examen de Conscience</item>
+    </string-array>
 </resources> 

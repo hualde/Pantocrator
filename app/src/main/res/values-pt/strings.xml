@@ -55,4 +55,63 @@
 
     <string name="penance_format">Como penitência, convido você a rezar %1$s, meditando especialmente sobre %2$s.</string>
     <string name="commandment_reference">Este pecado é contra o mandamento: %1$s</string>
+
+    <string name="prayer_guide">Guia de Orações</string>
+    <string name="prayer_guide_button">Guia de Orações</string>
+
+    <string-array name="prayer_categories">
+        <item>Orações Principais</item>
+        <item>Mistérios do Rosário</item>
+        <item>Orações Situacionais</item>
+        <item>Orações Sacramentais</item>
+        <item>Devoções Populares</item>
+        <item>Orações Diárias</item>
+    </string-array>
+
+    <string-array name="main_prayers">
+        <item>Pai Nosso</item>
+        <item>Ave Maria</item>
+        <item>Glória ao Pai</item>
+        <item>Salve Rainha</item>
+        <item>Oração de Fátima</item>
+    </string-array>
+
+    <string-array name="rosary_mysteries">
+        <item>Mistérios Gozosos (segunda e sábado)</item>
+        <item>Mistérios Dolorosos (terça e sexta)</item>
+        <item>Mistérios Gloriosos (quarta e domingo)</item>
+        <item>Mistérios Luminosos (quinta)</item>
+    </string-array>
+
+    <string-array name="situational_prayers">
+        <item>Ato de Contrição</item>
+        <item>Salmo 51 (Miserere)</item>
+        <item>Oração a São Miguel Arcanjo</item>
+        <item>Salmo 91 (Proteção)</item>
+        <item>Te Deum</item>
+        <item>Magnificat</item>
+        <item>Oração da Serenidade</item>
+        <item>Salmo 23 (O Senhor é meu Pastor)</item>
+    </string-array>
+
+    <string-array name="sacramental_prayers">
+        <item>Oração do Batismo</item>
+        <item>Oração da Comunhão</item>
+        <item>Oração da Confissão</item>
+        <item>Bênção Matrimonial</item>
+    </string-array>
+
+    <string-array name="popular_devotions">
+        <item>Santo Rosário</item>
+        <item>Terço da Divina Misericórdia</item>
+        <item>Via Sacra</item>
+        <item>Novenas</item>
+    </string-array>
+
+    <string-array name="daily_prayers">
+        <item>Oração da Manhã</item>
+        <item>Angelus</item>
+        <item>Oração da Noite</item>
+        <item>Exame de Consciência</item>
+    </string-array>
 </resources> 

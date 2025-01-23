@@ -84,6 +84,7 @@ class MainActivity : ComponentActivity() {
                                             Screen.Home -> stringResource(id = R.string.app_name)
                                             Screen.Confesion -> stringResource(id = R.string.confession)
                                             Screen.Settings -> stringResource(id = R.string.settings)
+                                            Screen.PrayerGuide -> stringResource(id = R.string.prayer_guide)
                                         }
                                     )
                                 },
@@ -114,6 +115,7 @@ class MainActivity : ComponentActivity() {
                             Screen.Home -> HomeScreen(
                                 onConfesionClick = { currentScreen = Screen.Confesion },
                                 onSettingsClick = { currentScreen = Screen.Settings },
+                                onPrayerGuideClick = { currentScreen = Screen.PrayerGuide },
                                 modifier = Modifier.padding(padding)
                             )
                             Screen.Confesion -> ConfesionScreen(
@@ -142,6 +144,9 @@ class MainActivity : ComponentActivity() {
                                 },
                                 modifier = Modifier.padding(padding)
                             )
+                            Screen.PrayerGuide -> PrayerGuideScreen(
+                                modifier = Modifier.padding(padding)
+                            )
                         }
                     }
                 }
@@ -166,13 +171,15 @@ class MainActivity : ComponentActivity() {
 enum class Screen {
     Home,
     Confesion,
-    Settings
+    Settings,
+    PrayerGuide
 }
 
 @Composable
 fun HomeScreen(
     onConfesionClick: () -> Unit,
     onSettingsClick: () -> Unit,
+    onPrayerGuideClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -194,6 +201,20 @@ fun HomeScreen(
                 modifier = Modifier.padding(end = 8.dp)
             )
             Text(stringResource(id = R.string.confession_button))
+        }
+        
+        ElevatedButton(
+            onClick = onPrayerGuideClick,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
+        ) {
+            Icon(
+                Icons.Default.Book,
+                contentDescription = null,
+                modifier = Modifier.padding(end = 8.dp)
+            )
+            Text(stringResource(id = R.string.prayer_guide_button))
         }
         
         OutlinedButton(
@@ -612,6 +633,101 @@ fun ConfesionScreen(
                             Icon(
                                 Icons.Default.Send,
                                 contentDescription = stringResource(id = R.string.send_message)
+                            )
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun PrayerGuideScreen(
+    modifier: Modifier = Modifier
+) {
+    var selectedCategoryIndex by remember { mutableStateOf<Int?>(null) }
+    
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .padding(16.dp)
+    ) {
+        if (selectedCategoryIndex == null) {
+            // Mostrar lista de categorías
+            val categories = stringArrayResource(id = R.array.prayer_categories)
+            LazyColumn(
+                verticalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                items(categories.size) { index ->
+                    Surface(
+                        onClick = { selectedCategoryIndex = index },
+                        shape = MaterialTheme.shapes.medium,
+                        color = MaterialTheme.colorScheme.surfaceVariant,
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(16.dp),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Text(
+                                text = categories[index],
+                                style = MaterialTheme.typography.titleMedium
+                            )
+                            Icon(
+                                Icons.Default.ChevronRight,
+                                contentDescription = null
+                            )
+                        }
+                    }
+                }
+            }
+        } else {
+            // Mostrar oraciones de la categoría seleccionada
+            Column(
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                IconButton(
+                    onClick = { selectedCategoryIndex = null }
+                ) {
+                    Icon(Icons.Default.ArrowBack, contentDescription = "Volver")
+                }
+                
+                val categories = stringArrayResource(id = R.array.prayer_categories)
+                // Usar el operador !! ya que sabemos que selectedCategoryIndex no es null en este punto
+                Text(
+                    text = categories[selectedCategoryIndex!!],
+                    style = MaterialTheme.typography.headlineSmall,
+                    modifier = Modifier.padding(vertical = 16.dp)
+                )
+                
+                val prayers = when (selectedCategoryIndex!!) {
+                    0 -> stringArrayResource(R.array.main_prayers)
+                    1 -> stringArrayResource(R.array.rosary_mysteries)
+                    2 -> stringArrayResource(R.array.situational_prayers)
+                    3 -> stringArrayResource(R.array.sacramental_prayers)
+                    4 -> stringArrayResource(R.array.popular_devotions)
+                    5 -> stringArrayResource(R.array.daily_prayers)
+                    else -> emptyArray()
+                }
+                
+                LazyColumn(
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    items(prayers) { prayer ->
+                        Surface(
+                            onClick = { /* TODO: Mostrar detalles de la oración */ },
+                            shape = MaterialTheme.shapes.small,
+                            color = MaterialTheme.colorScheme.surface,
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Text(
+                                text = prayer,
+                                style = MaterialTheme.typography.bodyLarge,
+                                modifier = Modifier.padding(16.dp)
                             )
                         }
                     }
