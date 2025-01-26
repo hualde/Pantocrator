@@ -140,4 +140,7 @@
     <string name="sorrowful_mysteries_days">Misterios Dolorosos (martes y viernes)</string>
     <string name="glorious_mysteries_days">Misterios Gloriosos (miércoles y domingo)</string>
     <string name="luminous_mysteries_days">Misterios Luminosos (jueves)</string>
+
+    <string name="initial_prayers">Oraciones Iniciales</string>
+    <string name="initial_prayers_reflection">Por la señal de la Santa Cruz, de nuestros enemigos, líbranos Señor, Dios nuestro. En el nombre del Padre, y del Hijo, y del Espíritu Santo. Amén.</string>
 </resources>

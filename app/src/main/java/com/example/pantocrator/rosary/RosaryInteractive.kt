@@ -33,11 +33,70 @@ data class RosaryBead(
 
 // Clase para manejar el estado del rosario
 class RosaryState {
+    private val reflections = RosaryReflections()
+    var currentMystery by mutableStateOf<RosaryMystery?>(null)
+        private set
+
     // Lista de todas las cuentas del rosario
     val beads = mutableStateListOf<RosaryBead>()
     
+    // Índice de la cuenta actual
+    var currentBeadIndex by mutableStateOf(0)
+        private set
+
+    // Día de la semana y índice del misterio seleccionado
+    private var currentDayOfWeek = 1
+    private var selectedMysteryType = 0
+
+    fun setMystery(dayOfWeek: Int, mysteryIndex: Int) {
+        currentDayOfWeek = dayOfWeek
+        selectedMysteryType = mysteryIndex
+        updateCurrentMystery()
+    }
+
+    private fun updateCurrentMystery() {
+        // Calcular la década actual
+        val currentDecade = if (currentBeadIndex < 6) {
+            0 // Cuentas iniciales
+        } else {
+            // Restar las cuentas iniciales (6) y dividir por 12 (Padrenuestro + 10 Avemarías + Gloria)
+            ((currentBeadIndex - 6) / 12).coerceIn(0, 4)
+        }
+
+        // Seleccionar el misterio según el tipo y la década
+        currentMystery = when (selectedMysteryType) {
+            0 -> reflections.joyfulMysteries[currentDecade]
+            1 -> reflections.sorrowfulMysteries[currentDecade]
+            2 -> reflections.gloriousMysteries[currentDecade]
+            3 -> reflections.luminousMysteries[currentDecade]
+            else -> reflections.joyfulMysteries[currentDecade]
+        }
+    }
+    
+    // Avanzar a la siguiente cuenta
+    fun moveToNextBead() {
+        if (currentBeadIndex < beads.size - 1) {
+            beads[currentBeadIndex] = beads[currentBeadIndex].copy(state = BeadState.COMPLETED)
+            currentBeadIndex++
+            beads[currentBeadIndex] = beads[currentBeadIndex].copy(state = BeadState.ACTIVE)
+            updateCurrentMystery()
+        }
+    }
+    
+    // Retroceder a la cuenta anterior
+    fun moveToPreviousBead() {
+        if (currentBeadIndex > 0) {
+            beads[currentBeadIndex] = beads[currentBeadIndex].copy(state = BeadState.NOT_STARTED)
+            currentBeadIndex--
+            beads[currentBeadIndex] = beads[currentBeadIndex].copy(state = BeadState.ACTIVE)
+            updateCurrentMystery()
+        }
+    }
+    
     init {
-        // Inicializar el rosario
+        // Inicializar el rosario con el primer misterio
+        updateCurrentMystery()
+        
         // Cruz
         beads.add(RosaryBead(BeadType.CROSS, 0, BeadState.ACTIVE, "cross"))
         
@@ -70,35 +129,20 @@ class RosaryState {
             position++
         }
     }
-    
-    // Índice de la cuenta actual
-    var currentBeadIndex by mutableStateOf(0)
-        private set
-    
-    // Avanzar a la siguiente cuenta
-    fun moveToNextBead() {
-        if (currentBeadIndex < beads.size - 1) {
-            beads[currentBeadIndex] = beads[currentBeadIndex].copy(state = BeadState.COMPLETED)
-            currentBeadIndex++
-            beads[currentBeadIndex] = beads[currentBeadIndex].copy(state = BeadState.ACTIVE)
-        }
-    }
-    
-    // Retroceder a la cuenta anterior
-    fun moveToPreviousBead() {
-        if (currentBeadIndex > 0) {
-            beads[currentBeadIndex] = beads[currentBeadIndex].copy(state = BeadState.NOT_STARTED)
-            currentBeadIndex--
-            beads[currentBeadIndex] = beads[currentBeadIndex].copy(state = BeadState.ACTIVE)
-        }
-    }
 }
 
 @Composable
 fun InteractiveRosaryScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    dayOfWeek: Int,
+    mysteryIndex: Int
 ) {
     val rosaryState = remember { RosaryState() }
+    
+    // Establecer el misterio actual
+    LaunchedEffect(dayOfWeek, mysteryIndex) {
+        rosaryState.setMystery(dayOfWeek, mysteryIndex)
+    }
     
     Column(
         modifier = modifier
@@ -107,6 +151,15 @@ fun InteractiveRosaryScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
+        // Reflexión del misterio
+        rosaryState.currentMystery?.let { mystery ->
+            RosaryReflectionView(
+                mystery = mystery,
+                currentBeadIndex = rosaryState.currentBeadIndex,
+                modifier = Modifier.fillMaxWidth()
+            )
+        }
+
         // Área del rosario gráfico
         Box(
             modifier = Modifier

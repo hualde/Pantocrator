@@ -803,7 +803,11 @@ fun RosaryScreen(
     modifier: Modifier = Modifier
 ) {
     var selectedMysteryIndex by remember { mutableStateOf<Int?>(null) }
-    
+    // Obtener el día actual de la semana (1 = Lunes, 7 = Domingo)
+    val currentDayOfWeek = remember {
+        java.time.LocalDate.now().dayOfWeek.value
+    }
+
     if (selectedMysteryIndex == null) {
         LazyColumn(
             modifier = modifier
@@ -1010,7 +1014,9 @@ fun RosaryScreen(
             InteractiveRosaryScreen(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(bottom = 16.dp)
+                    .padding(bottom = 16.dp),
+                dayOfWeek = currentDayOfWeek,
+                mysteryIndex = selectedMysteryIndex ?: 0 // Valor por defecto si es null
             )
         }
     }
