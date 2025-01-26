@@ -115,34 +115,9 @@ fun InteractiveRosaryScreen(
         ) {
             RosaryLayout(
                 beads = rosaryState.beads,
+                currentBeadIndex = rosaryState.currentBeadIndex,
                 modifier = Modifier.fillMaxSize()
             )
-        }
-        
-        // Área de la oración actual
-        Card(
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Column(
-                modifier = Modifier.padding(16.dp),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Text(
-                    text = "Oración Actual",
-                    style = MaterialTheme.typography.titleMedium
-                )
-                Spacer(modifier = Modifier.height(8.dp))
-                Text(
-                    text = when (rosaryState.beads[rosaryState.currentBeadIndex].prayerType) {
-                        "cross" -> "Señal de la Cruz"
-                        "our_father" -> "Padre Nuestro"
-                        "hail_mary" -> "Ave María"
-                        "glory" -> "Gloria"
-                        else -> ""
-                    },
-                    style = MaterialTheme.typography.bodyLarge
-                )
-            }
         }
         
         // Botones de control

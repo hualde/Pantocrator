@@ -12,12 +12,54 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.launch
 
 @Composable
 fun RosaryLayout(
     beads: List<RosaryBead>,
+    currentBeadIndex: Int,
     modifier: Modifier = Modifier
 ) {
+    // Calcular la década actual
+    val currentDecade = when {
+        currentBeadIndex < 6 -> 0  // Oraciones iniciales
+        else -> ((currentBeadIndex - 6) / 12) + 1  // Cada década tiene 12 cuentas (1 Padrenuestro + 10 Avemarías + 1 Gloria)
+    }
+
+    // Estados de scroll para cada fila
+    val initialScrollState = rememberScrollState()
+    val decadeScrollStates = List(5) { rememberScrollState() }
+    val coroutineScope = rememberCoroutineScope()
+
+    // Efecto para manejar el scroll automático
+    LaunchedEffect(currentBeadIndex) {
+        val targetScrollState = when {
+            currentBeadIndex < 6 -> initialScrollState
+            else -> decadeScrollStates[(currentBeadIndex - 6) / 12]
+        }
+
+        // Calcular la posición aproximada de scroll
+        val scrollPosition = when {
+            currentBeadIndex < 6 -> (currentBeadIndex * 52).toFloat() // 40dp (cuenta) + 12dp (conector)
+            else -> {
+                val positionInDecade = (currentBeadIndex - 6) % 12
+                // Cada cuenta grande = 40dp + 12dp (conector)
+                // Cada cuenta pequeña = 32dp + 12dp (conector)
+                if (positionInDecade == 0) {
+                    0f // Inicio de década (Padrenuestro)
+                } else {
+                    // Scroll lineal: aumentamos significativamente el scroll por cuenta
+                    val scrollPerBead = 120f  // Aumentado de 80f a 120f
+                    (scrollPerBead * (positionInDecade - 1)).toFloat()
+                }
+            }
+        }
+
+        coroutineScope.launch {
+            targetScrollState.animateScrollTo(scrollPosition.toInt())
+        }
+    }
+
     Box(
         modifier = modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
@@ -47,6 +89,13 @@ fun RosaryLayout(
                 )
             }
 
+            // Progreso del rosario
+            RosaryProgress(
+                currentBead = beads[currentBeadIndex],
+                currentDecade = currentDecade,
+                modifier = Modifier.padding(bottom = 8.dp)
+            )
+
             // Cruz (sin conectores)
             RosaryBeadView(
                 bead = beads[0],
@@ -60,7 +109,7 @@ fun RosaryLayout(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.Center,
                 modifier = Modifier
-                    .horizontalScroll(rememberScrollState())
+                    .horizontalScroll(initialScrollState)
                     .padding(horizontal = 16.dp)
             ) {
                 RosaryBeadView(bead = beads[1], showConnectorBefore = true)
@@ -77,7 +126,7 @@ fun RosaryLayout(
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Center,
                     modifier = Modifier
-                        .horizontalScroll(rememberScrollState())
+                        .horizontalScroll(decadeScrollStates[decade])
                         .padding(horizontal = 16.dp)
                 ) {
                     // Padrenuestro (cuenta grande)
