@@ -7,6 +7,7 @@
     <string name="back">Volver</string>
     <string name="confession_button">Comenzar Confesión</string>
     <string name="settings_button">Configuración</string>
+    <string name="rosary_button">Santo Rosario</string>
     <string name="confession_greeting_user">Ave María Purísima</string>
     <string name="confession_greeting_priest">Sin pecado concebida</string>
     <string name="initial_confession_message">Bienvenido hijo/a, estás en un espacio seguro para confesar tus pecados. ¿Qué te trae por aquí?</string>
@@ -59,6 +60,7 @@
 
     <string name="prayer_guide">Guía de Oraciones</string>
     <string name="prayer_guide_button">Guía de Oraciones</string>
+    <string name="rosary">Rosario</string>
 
     <string-array name="prayer_categories">
         <item>Oraciones Principales</item>
