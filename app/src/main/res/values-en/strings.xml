@@ -8,6 +8,7 @@
     <string name="back">Back</string>
     <string name="confession_button">Start Confession</string>
     <string name="settings_button">Settings</string>
+    <string name="rosary_button">Holy Rosary</string>
     <string name="confession_greeting_user">Hail Mary Most Pure</string>
     <string name="confession_greeting_priest">Conceived without sin</string>
     <string name="initial_confession_message">Welcome my child, you are in a safe space to confess your sins. What brings you here?</string>
@@ -115,4 +116,27 @@
         <item>Night Prayer</item>
         <item>Examination of Conscience</item>
     </string-array>
+
+    <!-- Rosary Strings -->
+    <string name="rosary_title">Holy Rosary</string>
+    <string name="choose_day">Choose the day of the week</string>
+    <string name="all_mysteries">All Mysteries</string>
+    
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+    
+    <string name="joyful_mysteries">Joyful Mysteries</string>
+    <string name="sorrowful_mysteries">Sorrowful Mysteries</string>
+    <string name="glorious_mysteries">Glorious Mysteries</string>
+    <string name="luminous_mysteries">Luminous Mysteries</string>
+    
+    <string name="joyful_mysteries_days">Joyful Mysteries (Monday and Saturday)</string>
+    <string name="sorrowful_mysteries_days">Sorrowful Mysteries (Tuesday and Friday)</string>
+    <string name="glorious_mysteries_days">Glorious Mysteries (Wednesday and Sunday)</string>
+    <string name="luminous_mysteries_days">Luminous Mysteries (Thursday)</string>
 </resources> 

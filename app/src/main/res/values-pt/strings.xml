@@ -8,6 +8,7 @@
     <string name="back">Voltar</string>
     <string name="confession_button">Iniciar Confissão</string>
     <string name="settings_button">Configurações</string>
+    <string name="rosary_button">Santo Rosário</string>
     <string name="confession_greeting_user">Ave Maria Puríssima</string>
     <string name="confession_greeting_priest">Concebida sem pecado</string>
     <string name="initial_confession_message">Bem-vindo filho/a, você está em um espaço seguro para confessar seus pecados. O que te traz aqui?</string>
@@ -114,4 +115,27 @@
         <item>Oração da Noite</item>
         <item>Exame de Consciência</item>
     </string-array>
+
+    <!-- Rosary Strings -->
+    <string name="rosary_title">Santo Rosário</string>
+    <string name="choose_day">Escolha o dia da semana</string>
+    <string name="all_mysteries">Todos os Mistérios</string>
+    
+    <string name="monday">Segunda-feira</string>
+    <string name="tuesday">Terça-feira</string>
+    <string name="wednesday">Quarta-feira</string>
+    <string name="thursday">Quinta-feira</string>
+    <string name="friday">Sexta-feira</string>
+    <string name="saturday">Sábado</string>
+    <string name="sunday">Domingo</string>
+    
+    <string name="joyful_mysteries">Mistérios Gozosos</string>
+    <string name="sorrowful_mysteries">Mistérios Dolorosos</string>
+    <string name="glorious_mysteries">Mistérios Gloriosos</string>
+    <string name="luminous_mysteries">Mistérios Luminosos</string>
+    
+    <string name="joyful_mysteries_days">Mistérios Gozosos (segunda e sábado)</string>
+    <string name="sorrowful_mysteries_days">Mistérios Dolorosos (terça e sexta)</string>
+    <string name="glorious_mysteries_days">Mistérios Gloriosos (quarta e domingo)</string>
+    <string name="luminous_mysteries_days">Mistérios Luminosos (quinta)</string>
 </resources> 

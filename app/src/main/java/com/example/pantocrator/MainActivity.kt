@@ -803,81 +803,85 @@ fun RosaryScreen(
 ) {
     var selectedMysteryIndex by remember { mutableStateOf<Int?>(null) }
     
-    Column(
-        modifier = modifier
-            .fillMaxSize()
-            .padding(16.dp)
-    ) {
-        if (selectedMysteryIndex == null) {
-            Text(
-                text = "Santo Rosario",
-                style = MaterialTheme.typography.headlineMedium,
-                modifier = Modifier.padding(bottom = 24.dp)
-            )
+    if (selectedMysteryIndex == null) {
+        LazyColumn(
+            modifier = modifier
+                .fillMaxSize()
+                .padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(24.dp)
+        ) {
+            item {
+                Text(
+                    text = stringResource(id = R.string.rosary_title),
+                    style = MaterialTheme.typography.headlineMedium
+                )
+            }
 
             // Calendario semanal
-            Card(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 24.dp),
-                shape = MaterialTheme.shapes.medium,
-            ) {
-                Column(
-                    modifier = Modifier.padding(16.dp)
+            item {
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = MaterialTheme.shapes.medium,
                 ) {
-                    Text(
-                        text = "Elige el día de la semana",
-                        style = MaterialTheme.typography.titleMedium,
-                        modifier = Modifier.padding(bottom = 16.dp)
-                    )
-
-                    val weekDays = listOf(
-                        Triple("Lunes", 0, "Misterios Gozosos"),
-                        Triple("Martes", 1, "Misterios Dolorosos"),
-                        Triple("Miércoles", 2, "Misterios Gloriosos"),
-                        Triple("Jueves", 3, "Misterios Luminosos"),
-                        Triple("Viernes", 1, "Misterios Dolorosos"),
-                        Triple("Sábado", 0, "Misterios Gozosos"),
-                        Triple("Domingo", 2, "Misterios Gloriosos")
-                    )
-
-                    LazyVerticalGrid(
-                        columns = GridCells.Fixed(2),
-                        horizontalArrangement = Arrangement.spacedBy(8.dp),
-                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                    Column(
+                        modifier = Modifier.padding(16.dp)
                     ) {
-                        // Primeros 6 días
-                        items(weekDays.size - 1) { index ->
-                            val (day, mysteryIndex, mysteryName) = weekDays[index]
-                            ElevatedCard(
-                                onClick = { selectedMysteryIndex = mysteryIndex },
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .height(100.dp)
+                        Text(
+                            text = stringResource(id = R.string.choose_day),
+                            style = MaterialTheme.typography.titleMedium,
+                            modifier = Modifier.padding(bottom = 16.dp)
+                        )
+
+                        val weekDays = listOf(
+                            Triple(stringResource(id = R.string.monday), 0, stringResource(id = R.string.joyful_mysteries)),
+                            Triple(stringResource(id = R.string.tuesday), 1, stringResource(id = R.string.sorrowful_mysteries)),
+                            Triple(stringResource(id = R.string.wednesday), 2, stringResource(id = R.string.glorious_mysteries)),
+                            Triple(stringResource(id = R.string.thursday), 3, stringResource(id = R.string.luminous_mysteries)),
+                            Triple(stringResource(id = R.string.friday), 1, stringResource(id = R.string.sorrowful_mysteries)),
+                            Triple(stringResource(id = R.string.saturday), 0, stringResource(id = R.string.joyful_mysteries)),
+                            Triple(stringResource(id = R.string.sunday), 2, stringResource(id = R.string.glorious_mysteries))
+                        )
+
+                        Column(
+                            verticalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
+                            LazyVerticalGrid(
+                                columns = GridCells.Fixed(2),
+                                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                                verticalArrangement = Arrangement.spacedBy(8.dp),
+                                userScrollEnabled = false,
+                                modifier = Modifier.height(324.dp)
                             ) {
-                                Column(
-                                    modifier = Modifier
-                                        .fillMaxSize()
-                                        .padding(8.dp),
-                                    horizontalAlignment = Alignment.CenterHorizontally,
-                                    verticalArrangement = Arrangement.Center
-                                ) {
-                                    Text(
-                                        text = day,
-                                        style = MaterialTheme.typography.titleMedium,
-                                        modifier = Modifier.padding(bottom = 4.dp)
-                                    )
-                                    Text(
-                                        text = mysteryName,
-                                        style = MaterialTheme.typography.bodySmall,
-                                        color = MaterialTheme.colorScheme.secondary
-                                    )
+                                items(weekDays.size - 1) { index ->
+                                    val (day, mysteryIndex, mysteryName) = weekDays[index]
+                                    ElevatedCard(
+                                        onClick = { selectedMysteryIndex = mysteryIndex },
+                                        modifier = Modifier
+                                            .fillMaxWidth()
+                                            .height(100.dp)
+                                    ) {
+                                        Column(
+                                            modifier = Modifier
+                                                .fillMaxSize()
+                                                .padding(8.dp),
+                                            horizontalAlignment = Alignment.CenterHorizontally,
+                                            verticalArrangement = Arrangement.Center
+                                        ) {
+                                            Text(
+                                                text = day,
+                                                style = MaterialTheme.typography.titleMedium,
+                                                modifier = Modifier.padding(bottom = 4.dp)
+                                            )
+                                            Text(
+                                                text = mysteryName,
+                                                style = MaterialTheme.typography.bodySmall,
+                                                color = MaterialTheme.colorScheme.secondary
+                                            )
+                                        }
+                                    }
                                 }
                             }
-                        }
-                        
-                        // Domingo ocupando dos espacios
-                        items(1, span = { GridItemSpan(2) }) {
+                            
                             val (day, mysteryIndex, mysteryName) = weekDays.last()
                             ElevatedCard(
                                 onClick = { selectedMysteryIndex = mysteryIndex },
@@ -910,108 +914,115 @@ fun RosaryScreen(
             }
 
             // Sección de misterios
-            Card(
-                modifier = Modifier.fillMaxWidth(),
-                shape = MaterialTheme.shapes.medium,
-            ) {
-                Column(
-                    modifier = Modifier.padding(16.dp)
+            item {
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = MaterialTheme.shapes.medium,
                 ) {
-                    Text(
-                        text = "Todos los Misterios",
-                        style = MaterialTheme.typography.titleMedium,
-                        modifier = Modifier.padding(bottom = 16.dp)
-                    )
-
-                    val mysteries = listOf(
-                        "Misterios Gozosos (lunes y sábado)" to Icons.Default.Favorite,
-                        "Misterios Dolorosos (martes y viernes)" to Icons.Default.Warning,
-                        "Misterios Gloriosos (miércoles y domingo)" to Icons.Default.Star,
-                        "Misterios Luminosos (jueves)" to Icons.Default.LightMode
-                    )
-
-                    LazyColumn(
-                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                    Column(
+                        modifier = Modifier.padding(16.dp)
                     ) {
-                        items(mysteries.size) { index ->
-                            val (mysteryText, icon) = mysteries[index]
-                            ElevatedCard(
-                                onClick = { selectedMysteryIndex = index },
-                                modifier = Modifier.fillMaxWidth()
-                            ) {
-                                Row(
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .padding(16.dp),
-                                    horizontalArrangement = Arrangement.SpaceBetween,
-                                    verticalAlignment = Alignment.CenterVertically
+                        Text(
+                            text = stringResource(id = R.string.all_mysteries),
+                            style = MaterialTheme.typography.titleMedium,
+                            modifier = Modifier.padding(bottom = 16.dp)
+                        )
+
+                        val mysteries = listOf(
+                            stringResource(id = R.string.joyful_mysteries_days) to Icons.Default.Favorite,
+                            stringResource(id = R.string.sorrowful_mysteries_days) to Icons.Default.Warning,
+                            stringResource(id = R.string.glorious_mysteries_days) to Icons.Default.Star,
+                            stringResource(id = R.string.luminous_mysteries_days) to Icons.Default.LightMode
+                        )
+
+                        Column(
+                            verticalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
+                            mysteries.forEachIndexed { index, (mysteryText, icon) ->
+                                ElevatedCard(
+                                    onClick = { selectedMysteryIndex = index },
+                                    modifier = Modifier.fillMaxWidth()
                                 ) {
                                     Row(
-                                        horizontalArrangement = Arrangement.spacedBy(12.dp),
+                                        modifier = Modifier
+                                            .fillMaxWidth()
+                                            .padding(16.dp),
+                                        horizontalArrangement = Arrangement.SpaceBetween,
                                         verticalAlignment = Alignment.CenterVertically
                                     ) {
+                                        Row(
+                                            horizontalArrangement = Arrangement.spacedBy(12.dp),
+                                            verticalAlignment = Alignment.CenterVertically
+                                        ) {
+                                            Icon(
+                                                icon,
+                                                contentDescription = null,
+                                                tint = MaterialTheme.colorScheme.secondary
+                                            )
+                                            Text(
+                                                text = mysteryText,
+                                                style = MaterialTheme.typography.titleMedium
+                                            )
+                                        }
                                         Icon(
-                                            icon,
+                                            Icons.Default.ChevronRight,
                                             contentDescription = null,
-                                            tint = MaterialTheme.colorScheme.secondary
-                                        )
-                                        Text(
-                                            text = mysteryText,
-                                            style = MaterialTheme.typography.titleMedium
+                                            tint = MaterialTheme.colorScheme.onSurfaceVariant
                                         )
                                     }
-                                    Icon(
-                                        Icons.Default.ChevronRight,
-                                        contentDescription = null,
-                                        tint = MaterialTheme.colorScheme.onSurfaceVariant
-                                    )
                                 }
                             }
                         }
                     }
                 }
             }
-        } else {
-            // Mostrar el misterio seleccionado
-            Column(
-                modifier = Modifier.fillMaxWidth()
+        }
+    } else {
+        // Vista del misterio seleccionado
+        Column(
+            modifier = modifier
+                .fillMaxSize()
+                .padding(16.dp)
+        ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 16.dp),
+                verticalAlignment = Alignment.CenterVertically
             ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(bottom = 16.dp),
-                    verticalAlignment = Alignment.CenterVertically
+                IconButton(
+                    onClick = { selectedMysteryIndex = null }
                 ) {
-                    IconButton(
-                        onClick = { selectedMysteryIndex = null }
-                    ) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = stringResource(id = R.string.back))
-                    }
-                    Spacer(modifier = Modifier.width(8.dp))
-                    val mysteries = stringArrayResource(id = R.array.rosary_mysteries)
-                    Text(
-                        text = mysteries[selectedMysteryIndex!!],
-                        style = MaterialTheme.typography.headlineSmall
-                    )
+                    Icon(Icons.Default.ArrowBack, contentDescription = stringResource(id = R.string.back))
                 }
-                
-                Card(
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = MaterialTheme.shapes.medium
-                ) {
-                    Text(
-                        text = stringResource(
-                            id = when(selectedMysteryIndex) {
-                                0 -> R.string.prayer_mysteries_joyful
-                                1 -> R.string.prayer_mysteries_sorrowful
-                                2 -> R.string.prayer_mysteries_glorious
-                                else -> R.string.prayer_mysteries_luminous
-                            }
-                        ),
-                        style = MaterialTheme.typography.bodyLarge,
-                        modifier = Modifier.padding(16.dp)
-                    )
-                }
+                Spacer(modifier = Modifier.width(8.dp))
+                Text(
+                    text = when(selectedMysteryIndex) {
+                        0 -> stringResource(id = R.string.joyful_mysteries)
+                        1 -> stringResource(id = R.string.sorrowful_mysteries)
+                        2 -> stringResource(id = R.string.glorious_mysteries)
+                        else -> stringResource(id = R.string.luminous_mysteries)
+                    },
+                    style = MaterialTheme.typography.headlineSmall
+                )
+            }
+            
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                shape = MaterialTheme.shapes.medium
+            ) {
+                Text(
+                    text = stringResource(
+                        id = when(selectedMysteryIndex) {
+                            0 -> R.string.prayer_mysteries_joyful
+                            1 -> R.string.prayer_mysteries_sorrowful
+                            2 -> R.string.prayer_mysteries_glorious
+                            else -> R.string.prayer_mysteries_luminous
+                        }
+                    ),
+                    style = MaterialTheme.typography.bodyLarge,
+                    modifier = Modifier.padding(16.dp)
+                )
             }
         }
     }

@@ -117,4 +117,27 @@
         <item>Oración de la Noche</item>
         <item>Examen de Conciencia</item>
     </string-array>
+
+    <!-- Rosary Strings -->
+    <string name="rosary_title">Santo Rosario</string>
+    <string name="choose_day">Elige el día de la semana</string>
+    <string name="all_mysteries">Todos los Misterios</string>
+    
+    <string name="monday">Lunes</string>
+    <string name="tuesday">Martes</string>
+    <string name="wednesday">Miércoles</string>
+    <string name="thursday">Jueves</string>
+    <string name="friday">Viernes</string>
+    <string name="saturday">Sábado</string>
+    <string name="sunday">Domingo</string>
+    
+    <string name="joyful_mysteries">Misterios Gozosos</string>
+    <string name="sorrowful_mysteries">Misterios Dolorosos</string>
+    <string name="glorious_mysteries">Misterios Gloriosos</string>
+    <string name="luminous_mysteries">Misterios Luminosos</string>
+    
+    <string name="joyful_mysteries_days">Misterios Gozosos (lunes y sábado)</string>
+    <string name="sorrowful_mysteries_days">Misterios Dolorosos (martes y viernes)</string>
+    <string name="glorious_mysteries_days">Misterios Gloriosos (miércoles y domingo)</string>
+    <string name="luminous_mysteries_days">Misterios Luminosos (jueves)</string>
 </resources>

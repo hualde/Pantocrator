@@ -8,6 +8,7 @@
     <string name="back">Indietro</string>
     <string name="confession_button">Inizia Confessione</string>
     <string name="settings_button">Impostazioni</string>
+    <string name="rosary_button">Santo Rosario</string>
     <string name="confession_greeting_user">Ave Maria Purissima</string>
     <string name="confession_greeting_priest">Concepita senza peccato</string>
     <string name="initial_confession_message">Benvenuto figlio mio, sei in uno spazio sicuro per confessare i tuoi peccati. Cosa ti porta qui?</string>
@@ -114,4 +115,27 @@
         <item>Preghiera della Sera</item>
         <item>Esame di Coscienza</item>
     </string-array>
+
+    <!-- Rosary Strings -->
+    <string name="rosary_title">Santo Rosario</string>
+    <string name="choose_day">Scegli il giorno della settimana</string>
+    <string name="all_mysteries">Tutti i Misteri</string>
+    
+    <string name="monday">Lunedì</string>
+    <string name="tuesday">Martedì</string>
+    <string name="wednesday">Mercoledì</string>
+    <string name="thursday">Giovedì</string>
+    <string name="friday">Venerdì</string>
+    <string name="saturday">Sabato</string>
+    <string name="sunday">Domenica</string>
+    
+    <string name="joyful_mysteries">Misteri Gaudiosi</string>
+    <string name="sorrowful_mysteries">Misteri Dolorosi</string>
+    <string name="glorious_mysteries">Misteri Gloriosi</string>
+    <string name="luminous_mysteries">Misteri Luminosi</string>
+    
+    <string name="joyful_mysteries_days">Misteri Gaudiosi (lunedì e sabato)</string>
+    <string name="sorrowful_mysteries_days">Misteri Dolorosi (martedì e venerdì)</string>
+    <string name="glorious_mysteries_days">Misteri Gloriosi (mercoledì e domenica)</string>
+    <string name="luminous_mysteries_days">Misteri Luminosi (giovedì)</string>
 </resources> 
