@@ -40,6 +40,7 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyGridScope
+import com.example.pantocrator.rosary.InteractiveRosaryScreen
 
 @OptIn(ExperimentalMaterial3Api::class)
 class MainActivity : ComponentActivity() {
@@ -978,16 +979,14 @@ fun RosaryScreen(
             }
         }
     } else {
-        // Vista del misterio seleccionado
         Column(
-            modifier = modifier
-                .fillMaxSize()
-                .padding(16.dp)
+            modifier = modifier.fillMaxSize()
         ) {
+            // Barra superior con título y botón de retroceso
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(bottom = 16.dp),
+                    .padding(16.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 IconButton(
@@ -1007,23 +1006,12 @@ fun RosaryScreen(
                 )
             }
             
-            Card(
-                modifier = Modifier.fillMaxWidth(),
-                shape = MaterialTheme.shapes.medium
-            ) {
-                Text(
-                    text = stringResource(
-                        id = when(selectedMysteryIndex) {
-                            0 -> R.string.prayer_mysteries_joyful
-                            1 -> R.string.prayer_mysteries_sorrowful
-                            2 -> R.string.prayer_mysteries_glorious
-                            else -> R.string.prayer_mysteries_luminous
-                        }
-                    ),
-                    style = MaterialTheme.typography.bodyLarge,
-                    modifier = Modifier.padding(16.dp)
-                )
-            }
+            // Rosario interactivo
+            InteractiveRosaryScreen(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(bottom = 16.dp)
+            )
         }
     }
 }
