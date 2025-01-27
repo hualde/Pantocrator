@@ -1,6 +1,7 @@
 package com.example.pantocrator.rosary
 
 import androidx.compose.animation.*
+import androidx.compose.animation.core.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -10,6 +11,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.pantocrator.R
+import androidx.compose.animation.core.Spring
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
@@ -23,7 +25,14 @@ fun RosaryReflectionView(
     // Solo mostrar la tarjeta si no estamos en las cuentas iniciales
     if (!isInitialBeads) {
         Card(
-            modifier = modifier.fillMaxWidth(),
+            modifier = modifier
+                .fillMaxWidth()
+                .animateContentSize(
+                    animationSpec = spring(
+                        dampingRatio = Spring.DampingRatioMediumBouncy,
+                        stiffness = Spring.StiffnessLow
+                    )
+                ),
             colors = CardDefaults.cardColors(
                 containerColor = MaterialTheme.colorScheme.secondaryContainer.copy(alpha = 0.7f)
             )
@@ -33,11 +42,25 @@ fun RosaryReflectionView(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.spacedBy(4.dp)
             ) {
-                Text(
-                    text = mystery.title,
-                    style = MaterialTheme.typography.titleMedium,
-                    color = MaterialTheme.colorScheme.onSecondaryContainer
-                )
+                // Título animado
+                AnimatedContent(
+                    targetState = mystery.title,
+                    transitionSpec = {
+                        fadeIn(animationSpec = tween(300)) + slideInHorizontally(
+                            initialOffsetX = { it },
+                            animationSpec = tween(300)
+                        ) togetherWith fadeOut(animationSpec = tween(300)) + slideOutHorizontally(
+                            targetOffsetX = { -it },
+                            animationSpec = tween(300)
+                        )
+                    }
+                ) { title ->
+                    Text(
+                        text = title,
+                        style = MaterialTheme.typography.titleMedium,
+                        color = MaterialTheme.colorScheme.onSecondaryContainer
+                    )
+                }
 
                 HorizontalDivider(
                     modifier = Modifier.padding(vertical = 2.dp),
@@ -56,11 +79,17 @@ fun RosaryReflectionView(
                     else -> mystery.shortMeditations[currentDecade]
                 }
                 
+                // Texto de reflexión animado
                 AnimatedContent(
                     targetState = displayText,
                     transitionSpec = {
-                        fadeIn() + slideInVertically { height -> height } togetherWith
-                        fadeOut() + slideOutVertically { height -> -height }
+                        (fadeIn(animationSpec = tween(500)) + slideInVertically(
+                            initialOffsetY = { it },
+                            animationSpec = tween(500)
+                        )) togetherWith (fadeOut(animationSpec = tween(500)) + slideOutVertically(
+                            targetOffsetY = { -it },
+                            animationSpec = tween(500)
+                        ))
                     }
                 ) { text ->
                     Text(
