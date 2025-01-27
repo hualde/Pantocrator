@@ -18,66 +18,45 @@ fun RosaryProgress(
 ) {
     var showPrayerDialog by remember { mutableStateOf(false) }
 
-    Column {
-        // Primer Card (se mantiene igual)
-        Card(
-            modifier = modifier.fillMaxWidth(),
-            colors = CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.7f)
-            )
+    // Única tarjeta con toda la información
+    Card(
+        modifier = modifier
+            .fillMaxWidth()
+            .clickable { showPrayerDialog = true },
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.7f)
+        )
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(4.dp)
         ) {
-            Column(
-                modifier = Modifier.padding(8.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.spacedBy(4.dp)
-            ) {
-                Text(
-                    text = when {
-                        currentDecade == 0 -> "Oraciones Iniciales"
-                        currentDecade in 1..5 -> "Década $currentDecade de 5"
-                        else -> "Oraciones Finales"
-                    },
-                    style = MaterialTheme.typography.titleMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
-            }
-        }
-
-        // Segundo Card (con diálogo expandible)
-        Card(
-            modifier = Modifier
-                .fillMaxWidth()
-                .clickable { showPrayerDialog = true },
-            colors = CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.7f)
+            Text(
+                text = when {
+                    currentDecade == 0 -> "Oraciones Iniciales"
+                    currentDecade in 1..5 -> "Década $currentDecade de 5"
+                    else -> "Oraciones Finales"
+                },
+                style = MaterialTheme.typography.titleMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                textAlign = TextAlign.Center
             )
-        ) {
-            Column(
-                modifier = Modifier.padding(8.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.spacedBy(4.dp)
-            ) {
-                Text(
-                    text = "Oración Actual",
-                    style = MaterialTheme.typography.labelMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
-                )
 
-                Text(
-                    text = when (currentBead.type) {
-                        BeadType.CROSS -> "Señal de la Cruz"
-                        BeadType.LARGE_BEAD -> when (currentBead.prayerType) {
-                            "our_father" -> "Padre Nuestro"
-                            "glory" -> "Gloria"
-                            else -> "Padre Nuestro"
-                        }
-                        BeadType.SMALL_BEAD -> "Ave María"
-                    },
-                    style = MaterialTheme.typography.titleLarge,
-                    textAlign = TextAlign.Center,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
-            }
+            Text(
+                text = when (currentBead.type) {
+                    BeadType.CROSS -> "Señal de la Cruz"
+                    BeadType.LARGE_BEAD -> when (currentBead.prayerType) {
+                        "our_father" -> "Padre Nuestro"
+                        "glory" -> "Gloria"
+                        else -> "Padre Nuestro"
+                    }
+                    BeadType.SMALL_BEAD -> "Ave María"
+                },
+                style = MaterialTheme.typography.titleLarge,
+                textAlign = TextAlign.Center,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
         }
     }
 
