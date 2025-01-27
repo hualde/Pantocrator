@@ -8,6 +8,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.pantocrator.R
+import androidx.compose.ui.platform.LocalContext
+import com.example.pantocrator.utils.FeedbackUtils
 
 // Tipos de cuentas del rosario
 enum class BeadType {
@@ -138,6 +140,15 @@ fun InteractiveRosaryScreen(
     mysteryIndex: Int
 ) {
     val rosaryState = remember { RosaryState() }
+    val context = LocalContext.current
+    val feedbackUtils = remember { FeedbackUtils(context) }
+    
+    // Limpiar recursos cuando se destruya la composición
+    DisposableEffect(Unit) {
+        onDispose {
+            feedbackUtils.release()
+        }
+    }
     
     // Establecer el misterio actual
     LaunchedEffect(dayOfWeek, mysteryIndex) {
@@ -178,14 +189,20 @@ fun InteractiveRosaryScreen(
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
             Button(
-                onClick = { rosaryState.moveToPreviousBead() },
+                onClick = { 
+                    feedbackUtils.playClickFeedback()
+                    rosaryState.moveToPreviousBead()
+                },
                 enabled = rosaryState.currentBeadIndex > 0
             ) {
                 Text("Anterior")
             }
             
             Button(
-                onClick = { rosaryState.moveToNextBead() },
+                onClick = { 
+                    feedbackUtils.playClickFeedback()
+                    rosaryState.moveToNextBead()
+                },
                 enabled = rosaryState.currentBeadIndex < rosaryState.beads.size - 1
             ) {
                 Text("Completar")
