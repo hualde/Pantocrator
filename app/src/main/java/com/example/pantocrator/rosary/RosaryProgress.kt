@@ -38,6 +38,7 @@ fun RosaryProgress(
                     currentDecade in 1..5 -> "Década $currentDecade de 5"
                     else -> "Oraciones Finales"
                 },
+                modifier = Modifier.fillMaxWidth(),
                 style = MaterialTheme.typography.titleMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 textAlign = TextAlign.Center
@@ -53,6 +54,7 @@ fun RosaryProgress(
                     }
                     BeadType.SMALL_BEAD -> "Ave María"
                 },
+                modifier = Modifier.fillMaxWidth(),
                 style = MaterialTheme.typography.titleLarge,
                 textAlign = TextAlign.Center,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
