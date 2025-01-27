@@ -145,11 +145,9 @@ fun InteractiveRosaryScreen(
     }
     
     Column(
-        modifier = modifier
-            .fillMaxSize()
-            .padding(16.dp),
+        modifier = modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(16.dp)
+        verticalArrangement = Arrangement.Top
     ) {
         // Reflexión del misterio
         rosaryState.currentMystery?.let { mystery ->
@@ -160,19 +158,17 @@ fun InteractiveRosaryScreen(
             )
         }
 
+        Spacer(modifier = Modifier.height(16.dp))
+
         // Área del rosario gráfico
-        Box(
-            modifier = Modifier
-                .weight(1f)
-                .fillMaxWidth()
-        ) {
-            RosaryLayout(
-                beads = rosaryState.beads,
-                currentBeadIndex = rosaryState.currentBeadIndex,
-                modifier = Modifier.fillMaxSize()
-            )
-        }
+        RosaryLayout(
+            beads = rosaryState.beads,
+            currentBeadIndex = rosaryState.currentBeadIndex,
+            modifier = Modifier.weight(1f)
+        )
         
+        Spacer(modifier = Modifier.height(16.dp))
+
         // Botones de control
         Row(
             modifier = Modifier.fillMaxWidth(),

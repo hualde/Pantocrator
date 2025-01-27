@@ -60,75 +60,72 @@ fun RosaryLayout(
         }
     }
 
-    Box(
-        modifier = modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+    Column(
+        modifier = modifier,
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Top
     ) {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(4.dp),
-            modifier = Modifier.padding(horizontal = 16.dp)
-        ) {
-            // Progreso del rosario
-            RosaryProgress(
-                currentBead = beads[currentBeadIndex],
-                currentDecade = currentDecade,
-                modifier = Modifier.padding(bottom = 0.dp)
-            )
+        // Progreso del rosario
+        RosaryProgress(
+            currentBead = beads[currentBeadIndex],
+            currentDecade = currentDecade,
+            modifier = Modifier.fillMaxWidth()
+        )
 
-            // Cruz (sin conectores)
-            RosaryBeadView(
-                bead = beads[0],
-                showConnectorBefore = false,
-                showConnectorAfter = false,
-                modifier = Modifier.padding(bottom = 8.dp)
-            )
+        Spacer(modifier = Modifier.height(24.dp))
+
+        // Cruz (sin conectores)
+        RosaryBeadView(
+            bead = beads[0],
+            showConnectorBefore = false,
+            showConnectorAfter = false,
+            modifier = Modifier
+        )
+        
+        Spacer(modifier = Modifier.height(16.dp))
+        
+        // Cuentas iniciales
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center,
+            modifier = Modifier.horizontalScroll(initialScrollState)
+        ) {
+            RosaryBeadView(bead = beads[1], showConnectorBefore = true)
+            for (i in 2..4) {
+                RosaryBeadView(bead = beads[i])
+            }
+            RosaryBeadView(bead = beads[5])
+        }
+        
+        // Décadas del rosario
+        var currentIndex = 6
+        repeat(5) { decade ->
+            Spacer(modifier = Modifier.height(12.dp))
             
-            // Cuentas iniciales
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.Center,
-                modifier = Modifier
-                    .horizontalScroll(initialScrollState)
-                    .padding(horizontal = 16.dp)
+                modifier = Modifier.horizontalScroll(decadeScrollStates[decade])
             ) {
-                RosaryBeadView(bead = beads[1], showConnectorBefore = true)
-                for (i in 2..4) {
-                    RosaryBeadView(bead = beads[i])
+                // Padrenuestro (cuenta grande)
+                RosaryBeadView(
+                    bead = beads[currentIndex],
+                    showConnectorBefore = true
+                )
+                currentIndex++
+                
+                // 10 Avemarías (cuentas pequeñas)
+                for (i in 0..9) {
+                    RosaryBeadView(bead = beads[currentIndex + i])
                 }
-                RosaryBeadView(bead = beads[5])
-            }
-            
-            // Décadas del rosario
-            var currentIndex = 6
-            repeat(5) { decade ->
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Center,
-                    modifier = Modifier
-                        .horizontalScroll(decadeScrollStates[decade])
-                        .padding(horizontal = 16.dp)
-                ) {
-                    // Padrenuestro (cuenta grande)
-                    RosaryBeadView(
-                        bead = beads[currentIndex],
-                        showConnectorBefore = true
-                    )
-                    currentIndex++
-                    
-                    // 10 Avemarías (cuentas pequeñas)
-                    for (i in 0..9) {
-                        RosaryBeadView(bead = beads[currentIndex + i])
-                    }
-                    currentIndex += 10
-                    
-                    // Gloria al final de la década
-                    RosaryBeadView(
-                        bead = beads[currentIndex],
-                        showConnectorAfter = decade != 4
-                    )
-                    currentIndex++
-                }
+                currentIndex += 10
+                
+                // Gloria al final de la década
+                RosaryBeadView(
+                    bead = beads[currentIndex],
+                    showConnectorAfter = decade != 4
+                )
+                currentIndex++
             }
         }
     }
