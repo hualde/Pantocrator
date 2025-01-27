@@ -48,8 +48,8 @@ fun RosaryReflectionView(
 
             // Seleccionar el texto a mostrar según la posición
             val displayText = when {
-                // Cuentas iniciales: mostrar texto introductorio
-                isInitialBeads -> stringResource(R.string.initial_prayers_reflection)
+                // Cuentas iniciales: no mostrar texto de reflexión
+                isInitialBeads -> ""
                 // Padrenuestro (inicio de década)
                 positionInDecade == 0 -> mystery.reflection
                 // Gloria (fin de década)
