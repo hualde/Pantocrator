@@ -149,13 +149,16 @@ fun InteractiveRosaryScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top
     ) {
-        // Reflexión del misterio
-        rosaryState.currentMystery?.let { mystery ->
+        // Área reservada para la reflexión del misterio
+        if (rosaryState.currentMystery != null && rosaryState.currentBeadIndex >= 6) {
             RosaryReflectionView(
-                mystery = mystery,
+                mystery = rosaryState.currentMystery!!,
                 currentBeadIndex = rosaryState.currentBeadIndex,
                 modifier = Modifier.fillMaxWidth()
             )
+        } else {
+            // Mantener el espacio aunque no se muestre la tarjeta
+            Spacer(modifier = Modifier.height(90.dp))
         }
 
         Spacer(modifier = Modifier.height(16.dp))
